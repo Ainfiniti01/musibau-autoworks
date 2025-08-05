@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/musibau-autoworks/static/css/main.bd015b15.css",
+    "main.js": "/musibau-autoworks/static/js/main.c0c5d7dd.js",
+    "static/js/488.e58e798f.chunk.js": "/musibau-autoworks/static/js/488.e58e798f.chunk.js",
+    "index.html": "/musibau-autoworks/index.html",
+    "main.bd015b15.css.map": "/musibau-autoworks/static/css/main.bd015b15.css.map",
+    "main.c0c5d7dd.js.map": "/musibau-autoworks/static/js/main.c0c5d7dd.js.map",
+    "488.e58e798f.chunk.js.map": "/musibau-autoworks/static/js/488.e58e798f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd015b15.css",
+    "static/js/main.c0c5d7dd.js"
+  ]
+}
