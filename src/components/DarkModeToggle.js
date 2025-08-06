@@ -6,7 +6,7 @@ import React from 'react';
 const DarkModeToggle = () => {
   return (
     <div className="dark-mode-toggle">
-      <button>Toggle Dark Mode</button>
+      {/* <button>Toggle Dark Mode</button> */}
     </div>
   );
 };

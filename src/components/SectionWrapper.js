@@ -1,8 +1,8 @@
 import React from 'react';
 
-const SectionWrapper = ({ children }) => {
+const SectionWrapper = ({ children, className }) => {
   return (
-    <section>
+    <section className={className}>
       {children}
     </section>
   );

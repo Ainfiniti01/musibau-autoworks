@@ -7,13 +7,20 @@
   text-align: center;
 }
 
-.spinner {
-  border: 4px solid rgba(0, 0, 0, 0.1);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border-left-color: #09f; /* Example color */
-  animation: spin 1s linear infinite;
+.spinner svg {
+  width: 80px;
+  height: 80px;
+  color: var(--color-gold); /* Use gold color from variables */
+  animation: car-spin 2s linear infinite;
+}
+
+@keyframes car-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes spin {

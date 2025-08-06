@@ -1,0 +1,391 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* CSS Variables */
+:root {
+  --color-black: #000; /* Solid black */
+  --color-gold: #FFD700; /* Gold */
+  --color-gold-dark: #e6c200; /* Darker gold */
+  --color-gold-light: #FFD700; /* Primary gold */
+  --color-white: #ddd; /* Light gray for paragraphs */
+  --color-gray-dark: #333333; /* Dark gray */
+  --color-gray-medium: #aaaaaa; /* Medium gray */
+
+  --font-primary: 'Montserrat', sans-serif; /* Montserrat for headings */
+  --font-secondary: 'Open Sans', sans-serif; /* Open Sans for body text */
+}
+
+/* Global Styles */
+body {
+  background-color: var(--color-black);
+  color: var(--color-white); /* Default text color for paragraphs */
+  font-family: var(--font-secondary); /* Use secondary font for body */
+  margin: 0;
+  padding: 0;
+  line-height: 1.8; /* Increased line height for better readability */
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+.container {
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto;
+  padding: 0 15px; /* Padding on the sides */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary); /* Use primary font for headings */
+  color: var(--color-gold-light); /* Gold for headings */
+  margin-bottom: 0.75em;
+  margin-top: 1.5rem; /* Added top margin for headings */
+}
+
+h1 { font-size: 3.5rem; margin-top: 2rem; text-transform: uppercase; } /* Increased size, added top margin and uppercase */
+h2 { font-size: 2.8rem; margin-top: 2rem; text-transform: uppercase; } /* Increased size, added top margin and uppercase */
+h3 { font-size: 2.2rem; margin-top: 1.8rem; } /* Increased size and top margin */
+
+p {
+  color: var(--color-gray-medium); /* Paragraphs in light gray */
+  margin-bottom: 1em;
+  line-height: 1.7; /* Increased line height for paragraphs */
+}
+
+a {
+  color: var(--color-gold-light); /* Gold for links */
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Added transform for hover effect */
+}
+
+a:hover, a:focus {
+  color: var(--color-gold-dark);
+  text-decoration: underline;
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 25px; /* Increased padding for prominence */
+  font-family: var(--font-primary);
+  font-size: 1.1rem; /* Increased font size */
+  font-weight: 700;
+  color: var(--color-black); /* Black text on gold button */
+  background-color: var(--color-gold-light); /* Gold background */
+  border: none;
+  border-radius: 6px; /* Slightly less rounded corners */
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow */
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  margin: 15px 0; /* Added top/bottom margin for spacing */
+}
+
+.btn:hover, .btn:focus {
+  background-color: var(--color-gold-dark); /* Darker gold on hover */
+  color: var(--color-white); /* White text on hover */
+  box-shadow: 0 4px 8px rgba(230, 194, 0, 0.4); /* Adjusted shadow for gold */
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+.btn:focus {
+  outline: 2px solid var(--color-gold-light); /* Accessibility-friendly focus outline */
+  outline-offset: 2px;
+}
+
+/* Image and Icon Styling */
+.img-fluid, .icon-fluid {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px; /* Consistent border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Consistent shadow */
+}
+
+.icon-fluid {
+  display: inline-block; /* Ensure it behaves like an element */
+  color: var(--color-gold-light); /* Gold color for icons */
+  font-size: 2rem; /* Larger icon size */
+  margin-right: 0.5rem; /* Space between icon and text */
+  vertical-align: middle; /* Align icon with text */
+}
+
+/* General Transitions */
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10000000rem 0; /* Vertical padding, no horizontal padding as container handles it */
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-bottom: 1px solid var(--color-gray-dark);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gold-light);
+}
+
+.logo a {
+  color: var(--color-gold-light);
+  text-decoration: none;
+}
+
+.logo a:hover {
+  color: var(--color-gold-dark);
+}
+
+.header-icon {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  color: var(--color-gold-light);
+  transition: color 0.3s ease-in-out;
+}
+
+.header-icon:hover {
+  color: var(--color-gold-dark);
+}
+
+/* Style for header icons */
+.header-right .header-icon {
+  margin-left: 1rem; /* Space between icons */
+  font-size: 1.4rem; /* Slightly smaller icons in header-right */
+}
+
+/* Specific styling for the mobile menu icon */
+.mobile-menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  color: var(--color-gold-light);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block; /* Show hamburger icon on small screens */
+  }
+
+  header nav ul {
+    display: none; /* Hide nav by default */
+  }
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+header nav ul li {
+  margin-left: 1.5rem;
+}
+
+header nav ul li a {
+  color: var(--color-white);
+  font-weight: 700;
+  transition: color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Added transform for hover effect */
+}
+
+header nav ul li a:hover,
+header nav ul li a:focus {
+  color: var(--color-gold-light);
+  text-decoration: none;
+  transform: scale(1.05); /* Slight scale on hover */
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Logo Image Styles */
+.logo-image {
+  height: 50px; /* Adjust height as needed */
+  margin-right: 10px; /* Space between logo and text */
+  vertical-align: middle; /* Align with text */
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    padding: 1rem;
+  }
+
+  .logo {
+    flex-basis: 100%; /* Logo takes full width on small screens */
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  .logo .header-icon { /* Style for the hamburger menu icon */
+    display: block; /* Show hamburger icon */
+    font-size: 1.8rem;
+  }
+
+  header nav ul {
+    flex-direction: column; /* Stack navigation links vertically */
+    width: 100%;
+    display: none; /* Hide nav by default, show with JS toggle */
+  }
+
+  header nav ul li {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .header-icon { /* Adjust margin for icons when stacked */
+    margin-left: 0.5rem;
+  }
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 2rem 0; /* Vertical padding */
+  border-top: 1px solid var(--color-gray-dark);
+  margin-top: auto; /* Push footer to the bottom if content is short */
+}
+
+.footer-links ul li a:focus,
+.footer-social-icons a:focus {
+  outline: 2px solid var(--color-gold-light); /* Accessibility-friendly focus outline */
+  outline-offset: 2px;
+}
+
+/* Add styles for mobile menu toggle */
+.mobile-menu-icon {
+  display: none; /* Hidden by default */
+  cursor: pointer;
+  color: var(--color-gold-light);
+  font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-icon {
+    display: block; /* Show hamburger icon on small screens */
+  }
+
+  header nav ul {
+    display: none; /* Hide nav by default */
+  }
+}
+
+/* Adjustments for responsiveness */
+h1 { font-size: 2.8rem; } /* Smaller H1 on mobile */
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.8rem; }
+
+.btn {
+  padding: 10px 20px; /* Smaller buttons on mobile */
+  font-size: 1rem;
+}
+
+.hero-section {
+  padding: 4rem 0; /* Reduced padding on mobile */
+  min-height: 40vh; /* Reduced min-height */
+}
+
+.hero-section h1 {
+  font-size: 3.5rem; /* Smaller hero heading */
+}
+
+.hero-section p:first-of-type {
+  font-size: 1.2rem;
+}
+
+.hero-section h2 {
+  font-size: 2.5rem; /* Smaller sub-heading */
+}
+
+.hero-section p:last-of-type {
+  font-size: 1rem;
+}
+
+.section-content {
+  padding: 2.5rem 0; /* Reduced padding on mobile */
+  margin-bottom: 1.5rem; /* Reduced margin */
+}
+
+.section-content:last-child {
+  margin-bottom: 0;
+}
+
+/* Add thin gold divider lines between sections */
+.section-divider {
+  height: 1px;
+  background-color: var(--color-gold-light);
+  width: 50px; /* Adjust width as needed */
+  margin: 2rem auto; /* Center the divider */
+}
+
+/* Refine button gradient */
+.btn {
+  background-image: linear-gradient(to right, var(--color-gold-light), var(--color-gold-dark));
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4); /* Gold shadow for gradient */
+}
+
+.btn:hover, .btn:focus {
+  background-image: linear-gradient(to right, var(--color-gold-dark), var(--color-gold-light)); /* Reverse gradient on hover */
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6); /* Stronger shadow on hover */
+  transform: translateY(-2px);
+}
+
+.hero-section h1 {
+  font-size: 5rem; /* Very large hero heading */
+  margin-bottom: 0.3em;
+  color: var(--color-white);
+  font-weight: 700; /* Ensure bold */
+}
+
+.hero-section p:first-of-type { /* The subtitle under the main heading */
+  font-size: 1.5rem;
+  color: var(--color-gold-light); /* Gold for subtitle */
+  margin-bottom: 1.5em;
+}
+
+.hero-section div { /* The block containing H2 and P */
+  max-width: 700px; /* Limit width for readability */
+}
+
+.hero-section h2 {
+  font-size: 3.2rem; /* Prominent sub-heading */
+  margin-top: 0; /* Remove default margin-top */
+  margin-bottom: 0.8em;
+  color: var(--color-white); /* White for sub-heading */
+}
+
+.hero-section p:last-of-type { /* The paragraph under H2 */
+  font-size: 1.2rem;
+  color: var(--color-gray-medium); /* Lighter gray for details */
+  line-height: 1.8; /* Ensure good line height */
+}
+
+/* Let's consolidate the styles for .section-content */
+.section-content {
+  padding: 4rem 0; /* Increased padding */
+  margin-bottom: 2.5rem; /* Increased margin between sections */
+  background-color: rgba(255, 255, 255, 0.02); /* Subtle background */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* Add a subtle shadow for depth */
+}
+
+/* Remove margin/border from the last section */
+.section-content:last-child {
+  margin-bottom: 0;
+}

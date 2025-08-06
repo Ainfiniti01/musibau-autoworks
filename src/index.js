@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import ReactGA from 'react-ga4';
 import './index.css';
+import './styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { AppProvider } from './context/AppContext';
@@ -11,6 +12,7 @@ import { HelmetProvider } from 'react-helmet-async';
 // TODO: Replace with your actual Measurement ID
 const GA_MEASUREMENT_ID = "G-XXXXXXXXXX"; 
 ReactGA.initialize(GA_MEASUREMENT_ID);
+ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,6 +1,8 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useEffect } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import RouteChangeTracker from './components/RouteChangeTracker';
+import AOS from 'aos'; // Import AOS
+import 'aos/dist/aos.css'; // Import AOS CSS
 
 // Layouts
 import PublicLayout from './components/PublicLayout';
@@ -34,6 +36,14 @@ const ManageBookingsPage = lazy(() => import('./pages/admin/ManageBookingsPage')
 const ManageProductsPage = lazy(() => import('./pages/admin/ManageProductsPage'));
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+      once: true, // Whether animation should happen only once - while the element is visible.
+      easing: 'ease-in-out', // Default easing
+    });
+  }, []); // Empty dependency array ensures this runs only once after initial render
+
   return (
     <Router>
       <RouteChangeTracker />

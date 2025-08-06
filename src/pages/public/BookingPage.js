@@ -24,7 +24,9 @@ const BookingPage = () => {
     setSuccess(false);
 
     try {
-      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+      // TODO: Replace with real API endpoint from client
+      const API_URL = 'https://jsonplaceholder.typicode.com/posts';
+      const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

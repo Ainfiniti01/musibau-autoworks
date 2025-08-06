@@ -1,32 +1,46 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaFacebook, FaInstagram, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-
-// TODO: Add styling for the footer
-// TODO: Add social media links
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'; // Example social icons
 
 const Footer = () => {
+  const socialIconClasses = "text-gray-400 hover:text-yellow-500 transition duration-300 text-2xl mx-2";
+
   return (
-    <footer>
-      <div className="footer-links">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/booking">Booking</Link></li>
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/reviews">Reviews</Link></li>
-        </ul>
-      </div>
-      <div className="footer-social-icons">
-        <Link to="#"><FaFacebook /></Link>
-        <Link to="#"><FaInstagram /></Link>
-        <Link to="tel:+1234567890"><FaPhone /></Link>
-        <Link to="mailto:info@musibauautoworks.com"><FaEnvelope /></Link>
-        <Link to="#"><FaMapMarkerAlt /></Link>
-      </div>
-      <div className="copyright">
-        <p>&copy; {new Date().getFullYear()} Musibau AutoWorks. All Rights Reserved.</p>
+    <footer className="bg-gray-900 text-gray-300 py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          {/* Logo and Contact Info */}
+          <div className="text-center md:text-left mb-8 md:mb-0">
+            <img src="/assets/logo/logo.jpg" alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" />
+            <p className="font-opensans">123 Automotive Lane, Car City, CA 90210</p>
+            <p className="font-opensans">Phone: (123) 456-7890</p>
+            <p className="font-opensans">Email: info@musibauautoworks.com</p>
+          </div>
+
+          {/* Quick Links */}
+          <div className="text-center mb-8 md:mb-0">
+            <h4 className="text-xl font-bold mb-4 text-white font-montserrat">Quick Links</h4>
+            <ul className="font-opensans">
+              <li className="mb-2"><a href="#home" className="hover:text-yellow-500 transition duration-300">Home</a></li>
+              <li className="mb-2"><a href="#services" className="hover:text-yellow-500 transition duration-300">Services</a></li>
+              <li className="mb-2"><a href="#about" className="hover:text-yellow-500 transition duration-300">About Us</a></li>
+              <li><a href="#contact" className="hover:text-yellow-500 transition duration-300">Contact</a></li>
+            </ul>
+          </div>
+
+          {/* Social Media */}
+          <div className="text-center">
+            <h4 className="text-xl font-bold mb-4 text-white font-montserrat">Follow Us</h4>
+            <div className="flex justify-center">
+              <a href="#" className={socialIconClasses} aria-label="Facebook"><FaFacebookF /></a>
+              <a href="#" className={socialIconClasses} aria-label="Twitter"><FaTwitter /></a>
+              <a href="#" className={socialIconClasses} aria-label="Instagram"><FaInstagram /></a>
+              <a href="#" className={socialIconClasses} aria-label="LinkedIn"><FaLinkedinIn /></a>
+            </div>
+          </div>
+        </div>
+        <div className="text-center mt-12 text-gray-500 font-opensans">
+          &copy; 2025 Musibau Autoworks. All rights reserved.
+        </div>
       </div>
     </footer>
   );
