@@ -58,7 +58,7 @@ function App() {
         <Route path="/admin/products" element={<ErrorBoundary><AdminLayout><ManageProductsPage /></AdminLayout></ErrorBoundary>} />
 
         {/* 404 Route */}
-        <Route path="*" element={<PublicLayout><NotFoundPage /></PublicLayout>} />
+        <Route path="*" element={<ErrorBoundary><PublicLayout><NotFoundPage /></PublicLayout></ErrorBoundary>} />
       </Routes>
       <ToastPlaceholder /> {/* Add ToastPlaceholder here */}
     </Router>

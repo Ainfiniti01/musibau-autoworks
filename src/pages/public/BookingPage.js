@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 import LoadingSpinner from '../../components/LoadingSpinner';
 import SectionWrapper from '../../components/SectionWrapper';
 import ToastPlaceholder from '../../components/ToastPlaceholder'; // Import ToastPlaceholder
@@ -30,6 +31,10 @@ const BookingPage = () => {
 
   return (
     <SectionWrapper>
+      <Helmet>
+        <title>Musibau AutoWorks - Book a Service</title>
+        <meta name="description" content="Book your next automotive service with Musibau AutoWorks. Easy online booking." />
+      </Helmet>
       <h1>Book a Service</h1>
       <div className="booking-steps">
         <div className="step">
@@ -48,19 +53,19 @@ const BookingPage = () => {
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" aria-label="Your Name" />
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" />
+          <input type="email" id="email" name="email" aria-label="Your Email Address" />
         </div>
         <div>
           <label htmlFor="phone">Phone:</label>
-          <input type="tel" id="phone" name="phone" />
+          <input type="tel" id="phone" name="phone" aria-label="Your Phone Number" />
         </div>
         <div>
           <label htmlFor="service">Service:</label>
-          <select id="service" name="service">
+          <select id="service" name="service" aria-label="Select Service">
             <option value="">--Please choose a service--</option>
             <option value="painting">Painting</option>
             <option value="mechanic">Mechanic</option>
@@ -72,9 +77,9 @@ const BookingPage = () => {
         </div>
         <div>
           <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message"></textarea>
+          <textarea id="message" name="message" aria-label="Your Message"></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" aria-label="Submit Booking">Submit</button>
       </form>
       <ToastPlaceholder message={toast.message} type={toast.type} />
     </SectionWrapper>

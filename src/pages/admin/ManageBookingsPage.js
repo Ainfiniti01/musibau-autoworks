@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 
 // TODO: Add styling for the manage bookings page
 // TODO: Fetch bookings data from an API
@@ -7,6 +8,10 @@ import React from 'react';
 const ManageBookingsPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - Manage Bookings</title>
+        <meta name="description" content="Manage all bookings made with Musibau AutoWorks. View and delete bookings." />
+      </Helmet>
       <h1>Manage Bookings</h1>
       <table>
         <thead>

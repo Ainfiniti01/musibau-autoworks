@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 import { Link } from 'react-router-dom';
 import SectionWrapper from '../../components/SectionWrapper';
 
@@ -18,6 +19,10 @@ const services = [
 const ServicesPage = () => {
   return (
     <SectionWrapper>
+      <Helmet>
+        <title>Musibau AutoWorks - Our Services</title>
+        <meta name="description" content="Explore the range of automotive services offered by Musibau AutoWorks." />
+      </Helmet>
       <h1>Our Services</h1>
       <ul>
         {services.map(service => (

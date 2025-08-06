@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 
 // TODO: Add styling for the manage customers page
 // TODO: Fetch customers data from an API
@@ -7,6 +8,10 @@ import React from 'react';
 const ManageCustomersPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - Manage Customers</title>
+        <meta name="description" content="Manage customers of Musibau AutoWorks. View, edit, or delete customer accounts." />
+      </Helmet>
       <h1>Manage Customers</h1>
       <table>
         <thead>

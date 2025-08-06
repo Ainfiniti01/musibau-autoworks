@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 import LoadingSpinner from '../../components/LoadingSpinner';
 
 // TODO: Fetch products data from an API
@@ -25,11 +26,15 @@ const ProductsPage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - Our Products</title>
+        <meta name="description" content="Browse our selection of high-quality automotive products at Musibau AutoWorks." />
+      </Helmet>
       <h1>Our Products</h1>
       <div>
         {products.map(product => (
           <div key={product.id}>
-            <img src="https://via.placeholder.com/150" alt={product.name} />
+            <img src={('../../assets/logo/logo.jpg')} alt={product.name} />
             <h2>{product.name}</h2>
             <p>{product.description}</p>
             <button>Contact to Buy</button>

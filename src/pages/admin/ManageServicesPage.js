@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 
 // TODO: Add styling for the manage services page
 // TODO: Fetch services data from an API
@@ -7,6 +8,10 @@ import React from 'react';
 const ManageServicesPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - Manage Services</title>
+        <meta name="description" content="Manage services offered by Musibau AutoWorks. Add, edit, or delete services." />
+      </Helmet>
       <h1>Manage Services</h1>
       <button>Add Service</button>
       <table>

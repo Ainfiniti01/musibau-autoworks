@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 import { useParams } from 'react-router-dom';
 
 // TODO: Add styling for the individual service page
@@ -9,6 +10,10 @@ const IndividualServicePage = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - {serviceId.charAt(0).toUpperCase() + serviceId.slice(1)} Service</title>
+        <meta name="description" content={`Details about the ${serviceId} service offered by Musibau AutoWorks.`} />
+      </Helmet>
       <h1>Service Details: {serviceId}</h1>
       <p>This is where the details for the {serviceId} service will be displayed.</p>
     </div>

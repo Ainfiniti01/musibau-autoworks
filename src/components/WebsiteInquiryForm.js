@@ -73,6 +73,7 @@ const WebsiteInquiryForm = () => {
             name="fullName"
             value={formData.fullName}
             onChange={handleChange}
+            aria-label="Full Name"
           />
           {errors.fullName && <p>{errors.fullName}</p>}
         </div>
@@ -84,6 +85,7 @@ const WebsiteInquiryForm = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
+            aria-label="Email Address"
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
@@ -95,6 +97,7 @@ const WebsiteInquiryForm = () => {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
+            aria-label="Phone Number"
           />
         </div>
         <div>
@@ -104,6 +107,7 @@ const WebsiteInquiryForm = () => {
             name="description"
             value={formData.description}
             onChange={handleChange}
+            aria-label="Project Description"
           ></textarea>
           {errors.description && <p>{errors.description}</p>}
         </div>
@@ -115,9 +119,10 @@ const WebsiteInquiryForm = () => {
             name="budget"
             value={formData.budget}
             onChange={handleChange}
+            aria-label="Preferred Budget"
           />
         </div>
-        <button type="submit" disabled={isSubmitting}>
+        <button type="submit" disabled={isSubmitting} aria-label="Submit Inquiry">
           {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
         </button>
       </form>

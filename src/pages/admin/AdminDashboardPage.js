@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 import { FaChartBar, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 
 // TODO: Add styling for the admin dashboard
@@ -7,6 +8,10 @@ import { FaChartBar, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 const AdminDashboardPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - Admin Dashboard</title>
+        <meta name="description" content="Admin dashboard for Musibau AutoWorks. Manage services, customers, bookings, and products." />
+      </Helmet>
       <h1>Admin Dashboard</h1>
       <div className="stats">
         <div>

@@ -6,7 +6,7 @@ import { FaTools, FaClock, FaSmile } from 'react-icons/fa';
 
 const HomePage = () => {
   return (
-    <div>
+    <main> {/* Use main for semantic HTML */}
       <Helmet>
         <title>Musibau AutoWorks - Home</title>
         <meta name="description" content="Welcome to Musibau AutoWorks, your premier destination for reliable automotive services." />
@@ -59,7 +59,7 @@ const HomePage = () => {
       </SectionWrapper>
 
       {/* Removed the embedded WebsiteInquiryForm as it will have its own route */}
-    </div>
+    </main>
   );
 };
 

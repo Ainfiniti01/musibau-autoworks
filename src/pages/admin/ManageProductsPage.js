@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 
 // TODO: Add styling for the manage products page
 // TODO: Fetch products data from an API
@@ -7,6 +8,10 @@ import React from 'react';
 const ManageProductsPage = () => {
   return (
     <div>
+      <Helmet>
+        <title>Musibau AutoWorks - Manage Products</title>
+        <meta name="description" content="Manage products offered by Musibau AutoWorks. Add, edit, or delete products." />
+      </Helmet>
       <h1>Manage Products</h1>
       <button>Add Product</button>
       <table>

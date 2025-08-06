@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet'; // Import Helmet
 
 // TODO: Add styling for the reviews page
 // TODO: Fetch reviews data from an API
@@ -13,6 +14,10 @@ const ReviewsPage = () => {
   return (
     <div>
       <h1>Customer Reviews</h1>
+      <Helmet>
+        <title>Musibau AutoWorks - Customer Reviews</title>
+        <meta name="description" content="Read what our satisfied customers have to say about Musibau AutoWorks." />
+      </Helmet>
       <div className="review-list">
         {reviews.map(review => (
           <div key={review.id} className="review-card">
