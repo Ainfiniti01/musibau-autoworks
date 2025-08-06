@@ -1,54 +1,52 @@
-import React, { useState } from 'react';
+// TODO: Replace dummy endpoint with the real inquiry API URL from client/backend
+
+import { useState } from 'react';
 
 const WebInquiryForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    projectType: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ company: '', email: '', inquiry: '' });
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // TODO: Implement form submission logic
-    console.log('Form submitted:', formData);
-    alert('Inquiry submitted! We will contact you soon.');
+    setLoading(true);
+    setError(null);
+    setSubmitted(false);
+
+    try {
+      const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) throw new Error('Inquiry failed');
+      setSubmitted(true);
+      setFormData({ company: '', email: '', inquiry: '' });
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <div>
-      <h1>Website Inquiry</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
-        </div>
-        <div>
-          <label htmlFor="projectType">Project Type:</label>
-          <select id="projectType" name="projectType" value={formData.projectType} onChange={handleChange} required>
-            <option value="">--Select Project Type--</option>
-            <option value="new-website">New Website</option>
-            <option value="redesign">Website Redesign</option>
-            <option value="maintenance">Website Maintenance</option>
-            <option value="other">Other</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required></textarea>
-        </div>
-        <button type="submit">Send Inquiry</button>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input name="company" value={formData.company} onChange={handleChange} placeholder="Company Name" required />
+      <input name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" required />
+      <textarea name="inquiry" value={formData.inquiry} onChange={handleChange} placeholder="What do you need?" required />
+
+      {loading && <p>Submitting...</p>}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {submitted && <p style={{ color: 'green' }}>Inquiry sent successfully!</p>}
+
+      <button type="submit" disabled={loading}>Submit</button>
+    </form>
   );
 };
 
