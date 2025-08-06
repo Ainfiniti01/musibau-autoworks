@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import LoadingSpinner from '../../components/LoadingSpinner';
 
 // TODO: Fetch products data from an API

@@ -7,13 +7,13 @@ import { Helmet } from 'react-helmet'; // Import Helmet
 
 const ManageServicesPage = () => {
   return (
-    <div>
+    <main> {/* Use main for semantic HTML */}
       <Helmet>
         <title>Musibau AutoWorks - Manage Services</title>
         <meta name="description" content="Manage services offered by Musibau AutoWorks. Add, edit, or delete services." />
       </Helmet>
       <h1>Manage Services</h1>
-      <button>Add Service</button>
+      <button aria-label="Add New Service">Add Service</button>
       <table>
         <thead>
           <tr>
@@ -25,20 +25,20 @@ const ManageServicesPage = () => {
           <tr>
             <td>Painting</td>
             <td>
-              <button>Edit</button>
-              <button>Delete</button>
+              <button aria-label="Edit Painting Service">Edit</button>
+              <button aria-label="Delete Painting Service">Delete</button>
             </td>
           </tr>
           <tr>
             <td>Mechanic</td>
             <td>
-              <button>Edit</button>
-              <button>Delete</button>
+              <button aria-label="Edit Mechanic Service">Edit</button>
+              <button aria-label="Delete Mechanic Service">Delete</button>
             </td>
           </tr>
         </tbody>
       </table>
-    </div>
+    </main>
   );
 };
 

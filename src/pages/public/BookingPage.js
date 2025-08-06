@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import LoadingSpinner from '../../components/LoadingSpinner';
 import SectionWrapper from '../../components/SectionWrapper';
 import ToastPlaceholder from '../../components/ToastPlaceholder'; // Import ToastPlaceholder
@@ -81,6 +81,8 @@ const BookingPage = () => {
         </div>
         <button type="submit" aria-label="Submit Booking">Submit</button>
       </form>
+      {/* Debugging toast object */}
+      <pre>{JSON.stringify(toast, null, 2)}</pre>
       <ToastPlaceholder message={toast.message} type={toast.type} />
     </SectionWrapper>
   );

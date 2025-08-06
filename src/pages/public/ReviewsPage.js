@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 
 // TODO: Add styling for the reviews page
 // TODO: Fetch reviews data from an API

@@ -7,7 +7,7 @@ import { FaChartBar, FaPlus, FaEdit, FaTrash } from 'react-icons/fa';
 
 const AdminDashboardPage = () => {
   return (
-    <div>
+    <main> {/* Use main for semantic HTML */}
       <Helmet>
         <title>Musibau AutoWorks - Admin Dashboard</title>
         <meta name="description" content="Admin dashboard for Musibau AutoWorks. Manage services, customers, bookings, and products." />
@@ -34,31 +34,31 @@ const AdminDashboardPage = () => {
         <div className="manage-section">
           <h3>Customers</h3>
           <div className="actions">
-            <button><FaPlus /> Add Customer</button>
-            <button><FaEdit /> Edit Customer</button>
-            <button><FaTrash /> Delete Customer</button>
+            <button aria-label="Add Customer"><FaPlus /> Add Customer</button>
+            <button aria-label="Edit Customer"><FaEdit /> Edit Customer</button>
+            <button aria-label="Delete Customer"><FaTrash /> Delete Customer</button>
           </div>
         </div>
 
         <div className="manage-section">
           <h3>Bookings</h3>
           <div className="actions">
-            <button><FaPlus /> Add Booking</button>
-            <button><FaEdit /> Edit Booking</button>
-            <button><FaTrash /> Delete Booking</button>
+            <button aria-label="Add Booking"><FaPlus /> Add Booking</button>
+            <button aria-label="Edit Booking"><FaEdit /> Edit Booking</button>
+            <button aria-label="Delete Booking"><FaTrash /> Delete Booking</button>
           </div>
         </div>
 
         <div className="manage-section">
           <h3>Products</h3>
           <div className="actions">
-            <button><FaPlus /> Add Product</button>
-            <button><FaEdit /> Edit Product</button>
-            <button><FaTrash /> Delete Product</button>
+            <button aria-label="Add Product"><FaPlus /> Add Product</button>
+            <button aria-label="Edit Product"><FaEdit /> Edit Product</button>
+            <button aria-label="Delete Product"><FaTrash /> Delete Product</button>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

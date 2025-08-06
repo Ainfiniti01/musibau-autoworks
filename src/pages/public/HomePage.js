@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import WebsiteInquiryForm from '../../components/WebsiteInquiryForm';
 import SectionWrapper from '../../components/SectionWrapper'; // Assuming SectionWrapper will be created next
 import { FaTools, FaClock, FaSmile } from 'react-icons/fa';
