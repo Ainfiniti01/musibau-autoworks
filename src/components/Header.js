@@ -21,6 +21,7 @@ const Header = () => {
           <li><Link to="/products">Products</Link></li>
           <li><Link to="/reviews">Reviews</Link></li>
           <li><Link to="/services">Services</Link></li>
+          <li><Link to="/web-inquiry">Web Inquiry</Link></li>
         </ul>
       </nav>
       <FaUserCircle className="header-icon" /> {/* Added FaUserCircle icon */}
