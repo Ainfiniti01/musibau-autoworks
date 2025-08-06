@@ -3,35 +3,25 @@ import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { Link } from 'react-router-dom';
 import SectionWrapper from '../../components/SectionWrapper';
 
+// Import components from HomePage
+import ServicesFilter from '../../components/ServicesFilter';
+
 // TODO: Fetch services data from an API
 
-const services = [
-  { id: 'painting', name: 'Painting' },
-  { id: 'mechanic', name: 'Mechanic' },
-  { id: 'panel-beating', name: 'Panel Beating' },
-  { id: 'rewiring', name: 'Rewiring' },
-  { id: 'emergency-pickup', name: 'Emergency Pickup' },
-  { id: 'home-service', name: 'Home Service' },
-  { id: 'car-wash', name: 'Car Wash (Coming Soon)' },
-  { id: 'general-enquiry', name: 'General Enquiry' },
-];
+
 
 const ServicesPage = () => {
   return (
-    <SectionWrapper>
+    <main> {/* Changed from SectionWrapper to main to allow individual SectionWrappers */}
       <Helmet>
         <title>Musibau AutoWorks - Our Services</title>
         <meta name="description" content="Explore the range of automotive services offered by Musibau AutoWorks." />
       </Helmet>
-      <h1>Our Services</h1>
-      <ul>
-        {services.map(service => (
-          <li key={service.id}>
-            <Link to={`/services/${service.id}`}>{service.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </SectionWrapper>
+        {/* <h1>Our Services</h1> */}
+      <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
+        <ServicesFilter />
+      </SectionWrapper>
+    </main>
   );
 };
 

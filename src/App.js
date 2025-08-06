@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import RouteChangeTracker from './components/RouteChangeTracker';
 import AOS from 'aos'; // Import AOS
 import 'aos/dist/aos.css'; // Import AOS CSS
+import ScrollToTopButton from './components/ScrollToTopButton'; // Import ScrollToTopButton
 
 // Layouts
 import PublicLayout from './components/PublicLayout';
@@ -20,6 +21,8 @@ const BookingPage = lazy(() => import('./pages/public/BookingPage'));
 const ProductsPage = lazy(() => import('./pages/public/ProductsPage'));
 const ContactPage = lazy(() => import('./pages/public/ContactPage'));
 const ReviewsPage = lazy(() => import('./pages/public/ReviewsPage'));
+const GalleryPage = lazy(() => import('./pages/public/GalleryPage')); // Import GalleryPage
+const AboutPage = lazy(() => import('./pages/public/AboutPage')); // Import AboutPage
 const NotFoundPage = lazy(() => import('./pages/public/NotFoundPage'));
 const WebInquiryForm = lazy(() => import('./components/WebInquiryForm'));
 
@@ -57,7 +60,8 @@ function App() {
           <Route path="/products" element={<ErrorBoundary><PublicLayout><ProductsPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/contact" element={<ErrorBoundary><PublicLayout><ContactPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/reviews" element={<ErrorBoundary><PublicLayout><ReviewsPage /></PublicLayout></ErrorBoundary>} />
-          <Route path="/web-inquiry" element={<ErrorBoundary><PublicLayout><WebInquiryForm /></PublicLayout></ErrorBoundary>} />
+          <Route path="/gallery" element={<ErrorBoundary><PublicLayout><GalleryPage /></PublicLayout></ErrorBoundary>} /> {/* Add Gallery Route */}
+          <Route path="/about" element={<ErrorBoundary><PublicLayout><AboutPage /></PublicLayout></ErrorBoundary>} /> {/* Add About Route */}
 
           {/* Customer Routes */}
           <Route path="/login" element={<ErrorBoundary><PublicLayout><LoginPage /></PublicLayout></ErrorBoundary>} />
@@ -75,6 +79,7 @@ function App() {
           <Route path="*" element={<ErrorBoundary><PublicLayout><NotFoundPage /></PublicLayout></ErrorBoundary>} />
         </Routes>
       </Suspense>
+      <ScrollToTopButton /> {/* Added ScrollToTopButton */}
       <ToastPlaceholder /> {/* Add ToastPlaceholder here */}
     </Router>
   );

@@ -17,9 +17,20 @@ const AboutSection = () => {
             <p className="text-lg text-gray-300 mb-6 font-opensans">
               Our team of certified technicians utilizes the latest diagnostic tools and quality parts to ensure your vehicle receives the best possible care. Whether it's routine maintenance or complex repairs, we've got you covered.
             </p>
-            <button className="bg-yellow-500 text-black py-3 px-6 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 font-montserrat">
+            <a
+              href="/about" // Link to the About page
+              className="inline-block bg-gold-500 text-black py-3 px-6 rounded-lg font-semibold hover:bg-gold-700 transition duration-300 font-montserrat mr-4" // Adjusted styling and added margin
+              data-aos="fade-up" // Added AOS animation
+            >
+              Learn More About Us
+            </a>
+            <a
+              href="/services" // Link to the Services page
+              className="inline-block bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 font-montserrat" // Adjusted styling
+              data-aos="fade-up" // Added AOS animation
+            >
               Discover Our Services
-            </button>
+            </a>
           </div>
 
           {/* Image Column */}

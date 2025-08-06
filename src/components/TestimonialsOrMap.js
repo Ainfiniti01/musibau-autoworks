@@ -1,6 +1,31 @@
 import React from 'react';
 
 const TestimonialsOrMap = () => {
+  // Function to render star ratings
+  const renderStars = (rating) => {
+    let stars = [];
+    for (let i = 0; i < rating; i++) {
+      stars.push(<span key={i} className="text-yellow-400 text-xl">★</span>);
+    }
+    return stars;
+  };
+
+  // Limited testimonials for homepage display
+  const testimonials = [
+    {
+      id: 1,
+      name: 'John Doe',
+      rating: 5,
+      comment: 'Exceptional service! Fixed my car quickly.',
+    },
+    {
+      id: 2,
+      name: 'Jane Smith',
+      rating: 4,
+      comment: 'Great customer service and fair prices.',
+    },
+  ];
+
   return (
     <section className="py-16 bg-gray-800">
       <div className="container mx-auto px-4">
@@ -29,15 +54,19 @@ const TestimonialsOrMap = () => {
             </div>
           </div>
 
-          {/* Testimonials Carousel Placeholder */}
+          {/* Testimonials */}
           <div className="md:w-1/2" data-aos="fade-left">
             <h3 className="text-2xl font-bold mb-4 text-white font-montserrat">What Our Clients Say</h3>
-            <div className="bg-gray-700 p-6 rounded-lg shadow-lg h-96 flex items-center justify-center">
-              <p className="text-gray-300 font-opensans text-center">
-                Testimonials carousel will be implemented here.
-                <br />
-                (Requires SwiperJS or similar library)
-              </p>
+            <div className="bg-gray-700 p-6 rounded-lg shadow-lg h-96 flex flex-col justify-between">
+              {testimonials.map((testimonial, index) => (
+                <div key={testimonial.id} className="mb-4">
+                  <div className="flex items-center mb-2">
+                    {renderStars(testimonial.rating)}
+                  </div>
+                  <p className="text-gray-300 font-opensans italic mb-2">{testimonial.comment}</p>
+                  <p className="font-semibold text-lg text-white">{testimonial.name}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

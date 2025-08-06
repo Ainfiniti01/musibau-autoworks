@@ -200,6 +200,13 @@ header nav ul li a:focus {
   transform: scale(1.05); /* Slight scale on hover */
 }
 
+/* Active Link Styling */
+.active-link {
+  color: var(--color-gold-light); /* Gold color for active link */
+  text-decoration: underline; /* Underline for active link */
+  font-weight: 700; /* Ensure bold */
+}
+
 .header-right {
   display: flex;
   align-items: center;

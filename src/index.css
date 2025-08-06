@@ -22,3 +22,9 @@ img {
   height: auto;
   display: block; /* Remove extra space below image */
 }
+
+/* Active Link Styling */
+.active-link {
+  color: gold; /* Or any other desired color */
+  text-decoration: underline;
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; // Import useState and useEffect
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import DarkModeToggle from './DarkModeToggle';
 import { FaBars, FaUserCircle, FaFacebook, FaYoutube, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'; // Import social and contact icons
 import AOS from 'aos'; // Import AOS
@@ -16,6 +16,8 @@ const Header = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  const location = useLocation(); // Get current location
+
   // Initialize AOS on component mount
   useEffect(() => {
     AOS.init({
@@ -26,7 +28,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="container"> {/* Added container class for responsiveness */}
+    <header className="container h-20 py-4"> {/* Added container class for responsiveness, increased height and padding */}
       <div className="logo">
         <Link to="/">
           <img src="..assets/images/logo.jpg" alt="Logo" className="logo-image" /> {/* Added logo image */}
@@ -38,23 +40,16 @@ const Header = () => {
       {/* Conditionally apply 'nav-active' class based on state */}
       <nav className={isMobileMenuOpen ? 'nav-active' : ''}>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/booking">Booking</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/products">Products</Link></li>
-          <li><Link to="/reviews">Reviews</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/web-inquiry">Web Inquiry</Link></li>
+          <li><Link to="/about" className={location.pathname === '/about' ? 'active-link' : ''}>About</Link></li>
+          <li><Link to="/" className={location.pathname === '/' ? 'active-link' : ''}>Home</Link></li>
+          <li><Link to="/services" className={location.pathname === '/services' ? 'active-link' : ''}>Services</Link></li>
+          <li><Link to="/gallery" className={location.pathname === '/gallery' ? 'active-link' : ''}>Gallery</Link></li>
+          <li><Link to="/booking" className={location.pathname === '/booking' ? 'active-link' : ''}>Booking</Link></li>
+          <li><Link to="/products" className={location.pathname === '/products' ? 'active-link' : ''}>Products</Link></li>
+          <li><Link to="/contact" className={location.pathname === '/contact' ? 'active-link' : ''}>Contact</Link></li>
         </ul>
       </nav>
-      <div className="header-right"> {/* Grouping icons and toggle */}
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="header-icon"><FaFacebook /></a> {/* Social icon */}
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="header-icon"><FaYoutube /></a> {/* Social icon */}
-        <a href="tel:+1234567890" className="header-icon"><FaPhone /></a> {/* Contact icon */}
-        <a href="#" className="header-icon"><FaMapMarkerAlt /></a> {/* Contact icon */}
-        <FaUserCircle className="header-icon" /> {/* Added FaUserCircle icon */}
-        <DarkModeToggle />
-      </div>
+
     </header>
   );
 };

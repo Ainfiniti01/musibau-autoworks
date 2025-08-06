@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link
 
 const ServiceItem = ({ icon, title, description, aosDelay, isVisible }) => {
   return (
@@ -24,6 +25,12 @@ const ServicesFilter = () => {
     { category: 'Diagnostics', icon: '⚙️', title: 'General Maintenance', description: 'Routine maintenance to keep your car in top condition.' },
     { category: 'Diagnostics', icon: '🔩', title: 'Mechanic (General Repair)', description: 'All-around mechanical repairs and servicing.' },
     { category: 'Diagnostics', icon: '🔗', title: 'Chassis Change / Repair', description: 'Structural integrity checks and repairs.' },
+    { category: 'Diagnostics', icon: '🏠', title: 'Home Service', description: 'On-site service at your location.' },
+    { category: 'Diagnostics', icon: '🔌', title: 'Rewiring', description: 'Expert electrical rewiring services.' },
+    { category: 'Diagnostics', icon: '✏️', title: 'Custom Request', description: 'Tailored solutions for unique needs.' },
+    { category: 'Diagnostics', icon: '❓', title: 'General Enquiry', description: 'General inquiries and consultations.' },
+    // { category: 'Diagnostics', icon: '', title: 'Home Service', description: 'On-site service at your location.' },
+    // { category: 'Diagnostics', icon: 'fa-plug', title: 'Rewiring', description: 'Expert electrical rewiring services.' },
 
     // Performance & Safety
     { category: 'Performance', icon: '🚗', title: 'Wheel Alignment', description: 'Ensuring proper tire wear and handling.' },
@@ -32,13 +39,13 @@ const ServicesFilter = () => {
     { category: 'Performance', icon: '💨', title: 'AC Repair', description: 'Keeping your car cool and comfortable.' },
 
     // Body Work
-    { category: 'Body Work', icon: '🎨', title: 'Panel Beating (Body Work)', description: 'Restoring your vehicle\'s body to its original condition.' },
+    { category: 'Diagnostics', icon: '🔨', title: 'Panel Beating', description: 'Restoring your vehicle\'s body to its original condition.' },
     { category: 'Body Work', icon: '🖌️', title: 'Painting', description: 'Professional automotive painting services.' },
 
     // Convenience
     { category: 'Convenience', icon: '🚚', title: 'Towing', description: 'Reliable towing services when you need them most.' },
-    { category: 'Convenience', icon: '💧', title: 'Car Wash (Coming Soon)', description: 'Premium car wash services coming soon!' },
     { category: 'Convenience', icon: '🛢️', title: 'Oil Change', description: 'Quick and efficient oil changes.' },
+    { category: 'Convenience', icon: '💧', title: 'Car Wash (Coming Soon)', description: 'Premium car wash services coming soon!' },
   ];
 
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -86,14 +93,19 @@ const ServicesFilter = () => {
         {/* Service Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service, index) => (
-            <ServiceItem
+            <Link
+              to={`/contact?service=${encodeURIComponent(service.title)}`}
               key={index}
-              icon={service.icon}
-              title={service.title}
-              description={service.description}
-              aosDelay={index * 100} // Adjust delay for smoother animation
-              isVisible={true} // All filtered services are visible
-            />
+              className="block" // Make the link take up the full space of the card
+            >
+              <ServiceItem
+                icon={service.icon}
+                title={service.title}
+                description={service.description}
+                aosDelay={index * 100} // Adjust delay for smoother animation
+                isVisible={true} // All filtered services are visible
+              />
+            </Link>
           ))}
         </div>
       </div>
