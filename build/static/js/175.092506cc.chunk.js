@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfrontend=self.webpackChunkfrontend||[]).push([[175],{3175:(s,e,r)=>{r.r(e),r.d(e,{default:()=>n});r(5043);var o=r(3285),t=r(579);const n=()=>(0,t.jsxs)("main",{children:[" ",(0,t.jsxs)(o.m,{children:[(0,t.jsx)("title",{children:"Musibau AutoWorks - Customer Dashboard"}),(0,t.jsx)("meta",{name:"description",content:"Welcome to your Musibau AutoWorks customer dashboard."})]}),(0,t.jsx)("h1",{children:"Welcome, [Customer Name]"}),(0,t.jsx)("p",{children:"This is your dashboard."})]})}}]);
+//# sourceMappingURL=175.092506cc.chunk.js.map
