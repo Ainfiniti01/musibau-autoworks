@@ -17,14 +17,14 @@ const BookingContactForm = () => {
     message: '',
   });
 
-  // Initialize message state based on query parameter
+  // Initialize message and serviceType state based on query parameter
   useEffect(() => {
     if (serviceFromQuery) {
+      const decodedService = decodeURIComponent(serviceFromQuery);
       setFormData((prevData) => ({
         ...prevData,
-        message: `Request: ${decodeURIComponent(serviceFromQuery)}`,
-        // Optionally, you could also try to set the serviceType here if it matches an option
-        // serviceType: decodeURIComponent(serviceFromQuery), // This might need mapping to dropdown values
+        message: `Request: ${decodedService}`,
+        serviceType: decodedService, // Set serviceType to the decoded service name
       }));
     }
   }, [serviceFromQuery]);

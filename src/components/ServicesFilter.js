@@ -96,7 +96,7 @@ const ServicesFilter = () => {
             <Link
               to={`/contact?service=${encodeURIComponent(service.title)}`}
               key={index}
-              className="block" // Make the link take up the full space of the card
+              className="block no-underline hover:no-underline" // Added no-underline classes
             >
               <ServiceItem
                 icon={service.icon}
