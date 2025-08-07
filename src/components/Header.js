@@ -62,8 +62,8 @@ const Header = () => {
           <Link to="/" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/')}`}>Home</Link>
           <Link to="/services" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/services')}`}>Services</Link>
           <Link to="/gallery" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/gallery')}`}>Gallery</Link>
+           <Link to="/products" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
           <Link to="/booking" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/booking')}`}>Booking</Link>
-          <Link to="/products" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
           <Link to="/contact" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/contact')}`}>Contact</Link>
           <DarkModeToggle /> {/* Added DarkModeToggle */}
         </div>

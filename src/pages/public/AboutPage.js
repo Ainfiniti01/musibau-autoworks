@@ -5,7 +5,7 @@ import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'; // Example icons for
 const AboutPage = () => {
   return (
     <SectionWrapper>
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 pt-20">
         <h1 className="text-4xl font-bold text-center mb-8">About Us</h1>
 
         <div className="grid md:grid-cols-2 gap-8 items-center">

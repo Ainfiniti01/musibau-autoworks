@@ -19,27 +19,30 @@ const ServiceItem = ({ icon, title, description, aosDelay, isVisible }) => {
 
 const ServicesFilter = () => {
   const allServices = [
+    // Custom
+    { category: 'Others', icon: '📝', title: 'Custom Request', description: 'Tailored solutions for unique needs.' },
+    { category: 'Others', icon: '☎', title: 'Technical Support', description: 'Tailored solutions for unique needs.' },
+    { category: 'Others', icon: '🏠', title: 'Home Service', description: 'On-site service at your location.' },
+
     // Diagnostics & Repairs
     { category: 'Diagnostics', icon: '🔧', title: 'Engine Repair', description: 'Expert diagnosis and repair for all engine issues.' },
     { category: 'Diagnostics', icon: '⚡', title: 'Electrical Diagnostics', description: 'Troubleshooting and repair of vehicle electrical systems.' },
     { category: 'Diagnostics', icon: '⚙️', title: 'General Maintenance', description: 'Routine maintenance to keep your car in top condition.' },
     { category: 'Diagnostics', icon: '🔩', title: 'Mechanic (General Repair)', description: 'All-around mechanical repairs and servicing.' },
     { category: 'Diagnostics', icon: '🔗', title: 'Chassis Change / Repair', description: 'Structural integrity checks and repairs.' },
-    { category: 'Diagnostics', icon: '🏠', title: 'Home Service', description: 'On-site service at your location.' },
     { category: 'Diagnostics', icon: '🔌', title: 'Rewiring', description: 'Expert electrical rewiring services.' },
-    { category: 'Diagnostics', icon: '✏️', title: 'Custom Request', description: 'Tailored solutions for unique needs.' },
-    { category: 'Diagnostics', icon: '❓', title: 'General Enquiry', description: 'General inquiries and consultations.' },
+    // { category: 'Diagnostics', icon: '❓', title: 'General Enquiry', description: 'General inquiries and consultations.' },
     // { category: 'Diagnostics', icon: '', title: 'Home Service', description: 'On-site service at your location.' },
     // { category: 'Diagnostics', icon: 'fa-plug', title: 'Rewiring', description: 'Expert electrical rewiring services.' },
 
     // Performance & Safety
-    { category: 'Performance', icon: '🚗', title: 'Wheel Alignment', description: 'Ensuring proper tire wear and handling.' },
+    { category: 'Performance', icon: '🛞', title: 'Wheel Alignment', description: 'Ensuring proper tire wear and handling.' },
     { category: 'Performance', icon: '🛑', title: 'Brake Repair', description: 'Reliable brake services for your safety.' },
     { category: 'Performance', icon: '🔋', title: 'Battery Replacement', description: 'New battery installation and testing.' },
     { category: 'Performance', icon: '💨', title: 'AC Repair', description: 'Keeping your car cool and comfortable.' },
 
     // Body Work
-    { category: 'Diagnostics', icon: '🔨', title: 'Panel Beating', description: 'Restoring your vehicle\'s body to its original condition.' },
+    { category: 'Body Work', icon: '🔨', title: 'Panel Beating', description: 'Restoring your vehicle\'s body to its original condition.' },
     { category: 'Body Work', icon: '🖌️', title: 'Painting', description: 'Professional automotive painting services.' },
 
     // Convenience
@@ -50,7 +53,7 @@ const ServicesFilter = () => {
 
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const categories = ['All', 'Diagnostics', 'Performance', 'Body Work', 'Convenience'];
+  const categories = ['All', 'Diagnostics', 'Performance', 'Body Work', 'Convenience', 'Others'];
 
   const filteredServices = selectedCategory === 'All'
     ? allServices
@@ -91,7 +94,7 @@ const ServicesFilter = () => {
         </div>
 
         {/* Service Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {filteredServices.map((service, index) => (
             <Link
               to={`/contact?service=${encodeURIComponent(service.title)}`}
