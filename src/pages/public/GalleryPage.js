@@ -70,7 +70,7 @@ const GalleryPage = () => {
               onClick={() => handleFilterChange(cat)}
               className={`px-4 py-2 rounded-md font-semibold transition duration-300
                 ${filter === cat
-                  ? 'bg-gold-500 text-white'
+                  ? 'bg-[#ECBE07] text-white'
                   : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                 }`}
             >

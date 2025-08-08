@@ -58,13 +58,13 @@ const Header = () => {
 
         {/* Navigation Links for Desktop */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link to="/about" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/about')}`}>About</Link>
-          <Link to="/" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/')}`}>Home</Link>
-          <Link to="/services" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/services')}`}>Services</Link>
-          <Link to="/gallery" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/gallery')}`}>Gallery</Link>
-           <Link to="/products" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
-          <Link to="/booking" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/booking')}`}>Booking</Link>
-          <Link to="/contact" className={`text-white hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/contact')}`}>Contact</Link>
+          <Link to="/about" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/about')}`}>About</Link>
+          <Link to="/" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/')}`}>Home</Link>
+          <Link to="/services" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/services')}`}>Services</Link>
+          <Link to="/gallery" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/gallery')}`}>Gallery</Link>
+           <Link to="/products" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
+          <Link to="/booking" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`}>Booking</Link>
+          <Link to="/contact" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/contact')}`}>Contact</Link>
           <DarkModeToggle /> {/* Added DarkModeToggle */}
         </div>
       </div>
@@ -72,13 +72,13 @@ const Header = () => {
       {/* Mobile Menu */}
       {/* Conditionally render the mobile menu */}
       <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} absolute top-28 left-0 right-0 z-50 w-full bg-gray-700 py-2 shadow-md`}>
-        <Link to="/about" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/about')}`} onClick={toggleMobileMenu}>About</Link>
-        <Link to="/" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/')}`} onClick={toggleMobileMenu}>Home</Link>
-        <Link to="/services" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/services')}`} onClick={toggleMobileMenu}>Services</Link>
-        <Link to="/gallery" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/gallery')}`} onClick={toggleMobileMenu}>Gallery</Link>
-        <Link to="/booking" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/booking')}`} onClick={toggleMobileMenu}>Booking</Link>
-        <Link to="/products" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/products')}`} onClick={toggleMobileMenu}>Products</Link>
-        <Link to="/contact" className={`block text-white py-2 hover:text-yellow-500 transition duration-300 font-opensans ${getActiveClass('/contact')}`} onClick={toggleMobileMenu}>Contact</Link>
+        <Link to="/about" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/about')}`} onClick={toggleMobileMenu}>About</Link>
+        <Link to="/" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/')}`} onClick={toggleMobileMenu}>Home</Link>
+        <Link to="/services" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/services')}`} onClick={toggleMobileMenu}>Services</Link>
+        <Link to="/gallery" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/gallery')}`} onClick={toggleMobileMenu}>Gallery</Link>
+        <Link to="/booking" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`} onClick={toggleMobileMenu}>Booking</Link>
+        <Link to="/products" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`} onClick={toggleMobileMenu}>Products</Link>
+        <Link to="/contact" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/contact')}`} onClick={toggleMobileMenu}>Contact</Link>
         {/* DarkModeToggle is already in desktop view, might need to decide if it should be in mobile too */}
       </div>
     </header>

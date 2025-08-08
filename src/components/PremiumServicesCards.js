@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const PremiumServiceCard = ({ image, title, description, aosDelay }) => {
   return (
@@ -58,6 +59,7 @@ const PremiumServicesCards = () => {
               title={service.title}
               description={service.description}
               aosDelay={index * 200}
+              link={`/contact?service=${encodeURIComponent(service.title)}`}
             />
           ))}
         </div>

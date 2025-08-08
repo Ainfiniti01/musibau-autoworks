@@ -9,12 +9,12 @@ const ExperienceSection = () => {
           <div className="md:w-1/2" data-aos="fade-right">
             <h2 className="text-4xl font-bold mb-6 text-white font-montserrat">Years of Experience You Can Trust</h2>
             <p className="text-lg text-gray-300 mb-4 font-opensans">
-              With over <span className="text-yellow-500 font-bold">20 years</span> of dedicated service in the automotive industry, Musibau Autoworks has built a reputation for <span className="text-white font-bold">reliability and excellence</span>. We understand the intricacies of vehicles and are committed to providing <span className="text-yellow-500 font-bold">top-notch service</span>.
+            With over <span className="text-[#ECBE07] font-bold">20 years</span> of dedicated service in the automotive industry, Musibau Autoworks has built a reputation for <span className="text-white font-bold">reliability and excellence</span>. We understand the intricacies of vehicles and are committed to providing <span className="text-[#ECBE07] font-bold">top-notch service</span>.
             </p>
             <p className="text-lg text-gray-300 mb-6 font-opensans">
               Our team continuously trains on the latest automotive technologies to ensure we can handle everything from classic cars to the newest models. Your satisfaction is our priority.
             </p>
-            <button className="bg-yellow-500 text-black py-3 px-6 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 font-montserrat">
+            <button className="bg-[#ECBE07] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#ECBE07] transition duration-300 font-montserrat">
               View Our Services
             </button>
           </div>

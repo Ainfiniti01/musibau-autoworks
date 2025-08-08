@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom'; // Import Link
 
 const ServiceItem = ({ icon, title, description, aosDelay, isVisible }) => {
   return (
-    <div
-      className={`bg-gray-800 text-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-yellow-500/50 ${
-        isVisible ? '' : 'hidden'
-      }`}
-      data-aos="fade-up"
-      data-aos-delay={aosDelay}
-    >
+      <div
+        className={`bg-gray-800 text-white p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#ECBE07]/50 ${
+          isVisible ? '' : 'hidden'
+        }`}
+        data-aos="fade-up"
+        data-aos-delay={aosDelay}
+      >
       <div className="text-yellow-500 text-4xl mb-4">{icon}</div>
       <h3 className="text-xl font-semibold mb-2 font-montserrat">{title}</h3>
       <p className="text-gray-300 font-opensans">{description}</p>
@@ -84,7 +84,7 @@ const ServicesFilter = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-5 py-2 rounded-full font-semibold transition duration-300 ${
                 selectedCategory === category
-                  ? 'bg-yellow-500 text-black'
+                  ? 'bg-[#ECBE07] text-black'
                   : 'bg-gray-700 text-white hover:bg-gray-600'
               } font-montserrat`}
             >

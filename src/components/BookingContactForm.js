@@ -47,8 +47,33 @@ const BookingContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Basic validation check for all fields
+    if (
+      !formData.fullName ||
+      !formData.email ||
+      !formData.phoneNumber ||
+      !formData.serviceType ||
+      !formData.preferredDate ||
+      !formData.message
+    ) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    // Simulate successful submission
     console.log('Form submitted:', formData);
-    // Here you would typically send the form data to an API
+    alert('Your request has been submitted successfully! We will contact you shortly.');
+
+    // Clear the form after submission
+    setFormData({
+      fullName: '',
+      email: '',
+      phoneNumber: '',
+      serviceType: '',
+      preferredDate: '',
+      message: '',
+    });
   };
 
   const serviceOptions = [

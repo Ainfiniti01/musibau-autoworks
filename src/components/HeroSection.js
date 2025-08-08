@@ -23,10 +23,10 @@ const HeroSection = () => {
             Your trusted partner for premium automotive solutions.
           </p>
             <div className="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="400"> {/* Button animation is already fade-up */}
-              <button className="bg-yellow-500 text-black py-3 px-6 rounded-lg font-semibold hover:bg-yellow-400 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+              <button className="bg-[#ECBE07] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#ECBE07] transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#ECBE07] focus:ring-opacity-50">
                 Get a Quote
               </button>
-              <button className="bg-transparent text-white py-3 px-6 rounded-lg border-2 border-yellow-500 hover:bg-yellow-500 hover:text-black transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+              <button className="bg-transparent text-white py-3 px-6 rounded-lg border-2 border-[#ECBE07] hover:bg-[#ECBE07] hover:text-black transition duration-300 focus:outline-none focus:ring-2 focus:ring-[#ECBE07] focus:ring-opacity-50">
                 Learn More
               </button>
             </div>

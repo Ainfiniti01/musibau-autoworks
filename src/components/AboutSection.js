@@ -19,7 +19,7 @@ const AboutSection = () => {
             </p>
             <a
               href="/about" // Link to the About page
-              className="inline-block bg-gold-500 text-black py-3 px-6 rounded-lg font-semibold hover:bg-gold-700 transition duration-300 font-montserrat mr-4" // Adjusted styling and added margin
+              className="inline-block bg-[#ECBE07] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#ECBE07] transition duration-300 font-montserrat mr-4" // Adjusted styling and added margin
               data-aos="fade-up" // Added AOS animation
             >
               Learn More About Us

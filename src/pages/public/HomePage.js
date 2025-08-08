@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import SectionWrapper from '../../components/SectionWrapper';
 
 // Import all created components
-import HeroSection from '../../components/HeroSection';
+import HeroSlider from '../../components/HeroSlider';
 import ServicesOverview from '../../components/ServicesOverview';
 import PremiumServicesCards from '../../components/PremiumServicesCards';
 import WhyChooseUs from '../../components/WhyChooseUs';
@@ -11,6 +11,7 @@ import AboutSection from '../../components/AboutSection';
 import ExperienceSection from '../../components/ExperienceSection';
 import TestimonialsOrMap from '../../components/TestimonialsOrMap';
 import ReviewsSection from '../../components/ReviewsSection'; // Import the new ReviewsSection
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
@@ -21,7 +22,7 @@ const HomePage = () => {
       </Helmet>
 
       <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
-        <HeroSection />
+        <HeroSlider />
       </SectionWrapper>
       <SectionWrapper className=""> {/* Added py-16 for spacing */}
         <ServicesOverview />
@@ -52,6 +53,11 @@ const HomePage = () => {
       <SectionWrapper className=""> {/* Added py-16 for spacing */}
         <AboutSection />
       </SectionWrapper>
+      <div className="text-center py-4">
+        <Link to="/about" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          Learn More About Us
+        </Link>
+      </div>
       <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
         <TestimonialsOrMap />
       </SectionWrapper>

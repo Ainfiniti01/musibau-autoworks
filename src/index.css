@@ -25,6 +25,6 @@ img {
 
 /* Active Link Styling */
 .active-link {
-  color: gold; /* Or any other desired color */
+  color: #ECBE07; /* Or any other desired color */
   text-decoration: underline;
 }

@@ -5,7 +5,7 @@ const TestimonialsOrMap = () => {
   const renderStars = (rating) => {
     let stars = [];
     for (let i = 0; i < rating; i++) {
-      stars.push(<span key={i} className="text-yellow-400 text-xl">★</span>);
+      stars.push(<span key={i} className="text-[#ECBE07] text-xl">★</span>);
     }
     return stars;
   };

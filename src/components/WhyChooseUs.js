@@ -7,7 +7,7 @@ const FeatureItem = ({ icon, title, description, aosDelay }) => {
       data-aos="fade-up"
       data-aos-delay={aosDelay}
     >
-      <div className="text-yellow-500 text-5xl mb-4">{icon}</div>
+      <div className="text-[#ECBE07] text-5xl mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-2 text-white font-montserrat">{title}</h3>
       <p className="text-gray-300 font-opensans">{description}</p>
     </div>

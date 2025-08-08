@@ -27,7 +27,7 @@ const ReviewsSection = () => {
   const renderStars = (rating) => {
     let stars = [];
     for (let i = 0; i < rating; i++) {
-      stars.push(<span key={i} className="text-yellow-400 text-xl">★</span>);
+      stars.push(<span key={i} className="text-[#ECBE07] text-xl">★</span>);
     }
     return stars;
   };
@@ -59,7 +59,7 @@ const ReviewsSection = () => {
       <div className="text-center mt-12">
         <a
           href="/reviews" // Link to reviews page or About/Services page as per suggestion
-          className="text-xl font-semibold text-gold-500 hover:text-gold-700 transition duration-300"
+          className="text-xl font-semibold text-[#ECBE07] hover:text-[#ECBE07] transition duration-300"
         >
           Read More Testimonials →
         </a>

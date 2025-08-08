@@ -3,10 +3,10 @@
 
 /* CSS Variables */
 :root {
-  --color-black: #000; /* Solid black */
-  --color-gold: #FFD700; /* Gold */
-  --color-gold-dark: #e6c200; /* Darker gold */
-  --color-gold-light: #FFD700; /* Primary gold */
+  --color-black: #004040; /* Solid black */
+  --color-gold: #ECBE07; /* Gold */
+  --color-gold-dark: #ECBE07; /* Darker gold */
+  --color-gold-light: #ECBE07; /* Primary gold */
   --color-white: #ddd; /* Light gray for paragraphs */
   --color-gray-dark: #333333; /* Dark gray */
   --color-gray-medium: #aaaaaa; /* Medium gray */
