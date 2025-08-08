@@ -91,7 +91,7 @@ const BookingContactForm = () => {
   return (
     <section className="bg-[#0B0D1F] py-10 px-6 md:px-20" data-aos="fade-up">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white mb-8">Book Your Service or Contact Us</h2>
+        <h2 className="text-3xl font-bold text-center text-white mb-8 py-10">Book Your Service or Contact Us</h2>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Full Name */}
           <div className="flex flex-col" data-aos="fade-up" data-aos-delay="100">
@@ -196,7 +196,7 @@ const BookingContactForm = () => {
           <div className="md:col-span-2 flex justify-center" data-aos="fade-up" data-aos-delay="700">
             <button
               type="submit"
-              className="px-8 py-3 bg-gold text-black font-bold rounded-lg hover:bg-gold-hover transition duration-300 ease-in-out transform hover:scale-105"
+              className="px-8 py-3 bg-gold text-yellow font-bold rounded-lg hover:bg-gold-hover transition duration-300 ease-in-out transform hover:scale-105"
             >
               Submit Request
             </button>

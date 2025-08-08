@@ -37,6 +37,8 @@ const Navbar = () => {
           <Link to="/gallery" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Gallery</Link>
           <Link to="/about" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">About Us</Link>
           <Link to="/contact" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Contact</Link>
+          <Link to="/login" className="text-sm text-blue-600 hover:underline">Login</Link>
+          <Link to="/register" className="ml-4 text-sm text-green-600 hover:underline">Register</Link>
         </div>
       </div>
 
@@ -46,6 +48,8 @@ const Navbar = () => {
         <Link to="/gallery" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Gallery</Link>
         <Link to="/about" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>About Us</Link>
         <Link to="/contact" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Contact</Link>
+        <Link to="/login" className="block text-sm text-blue-600 hover:underline py-2" onClick={toggleMenu}>Login</Link>
+        <Link to="/register" className="block text-sm text-green-600 hover:underline py-2" onClick={toggleMenu}>Register</Link>
       </div>
     </nav>
   );

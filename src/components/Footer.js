@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'; // Example social icons
 
 const Footer = () => {
@@ -10,7 +11,7 @@ const socialIconClasses = "text-gray-400 hover:text-[#ECBE07] transition duratio
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and Contact Info */}
           <div className="text-center md:text-left mb-8 md:mb-0">
-            <img src="/assets/logo/logo.jpg" alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" />
+            <img src="../assets/images/background.png" alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" />
             <p className="font-opensans">123 Automotive Lane, Car City, CA 90210</p>
             <p className="font-opensans">Phone: (123) 456-7890</p>
             <p className="font-opensans">Email: info@musibauautoworks.com</p>
@@ -20,20 +21,20 @@ const socialIconClasses = "text-gray-400 hover:text-[#ECBE07] transition duratio
           <div className="text-center mb-8 md:mb-0">
             <h4 className="text-xl font-bold mb-4 text-white font-montserrat">Quick Links</h4>
             <ul className="font-opensans">
-              <li className="mb-2"><a href="/home" className="hover:text-[#ECBE07] transition duration-300">Home</a></li>
-              <li className="mb-2"><a href="/services" className="hover:text-[#ECBE07] transition duration-300">Services</a></li>
-              <li className="mb-2"><a href="/about" className="hover:text-[#ECBE07] transition duration-300">About Us</a></li>
-              <li><a href="/contact" className="hover:text-[#ECBE07] transition duration-300">Contact</a></li>
+              <li className="mb-2"><Link to="/home" className="hover:text-[#ECBE07] transition duration-300">Home</Link></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Services</Link></li>
+              <li className="mb-2"><Link to="/about" className="hover:text-[#ECBE07] transition duration-300">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-[#ECBE07] transition duration-300">Contact</Link></li>
             </ul>
           </div>
           {/* Quick Links */}
           <div className="text-center mb-8 md:mb-0">
             <h4 className="text-xl font-bold mb-4 text-white font-montserrat">Services</h4>
             <ul className="font-opensans">
-              <li className="mb-2"><a href="/services" className="hover:text-[#ECBE07] transition duration-300">Chassis Repair</a></li>
-              <li className="mb-2"><a href="/home" className="hover:text-[#ECBE07] transition duration-300">Engine Overhaul</a></li>
-              <li className="mb-2"><a href="/about" className="hover:text-[#ECBE07] transition duration-300">Electrical Diagnostics</a></li>
-              <li><a href="/contact" className="hover:text-[#ECBE07] transition duration-300">General Maintenace</a></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Chassis Repair</Link></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Engine Overhaul</Link></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Electrical Diagnostics</Link></li>
+              <li><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">General Maintenace</Link></li>
             </ul>
           </div>
 

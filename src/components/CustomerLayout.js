@@ -10,7 +10,7 @@ const CustomerLayout = ({ children }) => {
       <nav>
         <ul>
           <li><Link to="/customer/dashboard">Dashboard</Link></li>
-          <li><Link to="/">Logout</Link></li>
+          <li><Link to="/customer/login">Logout</Link></li>
         </ul>
       </nav>
       <main>{children}</main>

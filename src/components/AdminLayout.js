@@ -14,7 +14,7 @@ const AdminLayout = ({ children }) => {
           <li><Link to="/admin/customers">Manage Customers</Link></li>
           <li><Link to="/admin/bookings">Manage Bookings</Link></li>
           <li><Link to="/admin/products">Manage Products</Link></li>
-          <li><Link to="/">Logout</Link></li>
+          <li><Link to="/admin/login">Logout</Link></li>
         </ul>
       </nav>
       <main>{children}</main>

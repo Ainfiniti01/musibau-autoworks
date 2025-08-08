@@ -53,11 +53,11 @@ const HomePage = () => {
       <SectionWrapper className=""> {/* Added py-16 for spacing */}
         <AboutSection />
       </SectionWrapper>
-      <div className="text-center py-4">
-        <Link to="/about" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      {/* <div className="text-center py-4">
+        <Link to="/about" >
           Learn More About Us
         </Link>
-      </div>
+      </div> */}
       <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
         <TestimonialsOrMap />
       </SectionWrapper>

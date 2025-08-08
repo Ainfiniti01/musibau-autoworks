@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { formatCurrency } from '../utils/formatCurrency';
 
 const FeaturedProducts = () => {
   // Initialize AOS on component mount
@@ -94,7 +95,7 @@ const FeaturedProducts = () => {
   return (
     <section className="bg-white py-10 px-6 md:px-20" data-aos="fade-up">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Featured Auto Parts</h2>
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8 py-10">Featured Auto Parts</h2>
         {/* Filtering UI will be added here */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {products.map((product) => (
@@ -105,6 +106,7 @@ const FeaturedProducts = () => {
               description={product.description}
               buttonText={product.buttonText}
               link={product.link} // Pass the link prop
+              price={formatCurrency(product.price)}
             />
           ))}
         </div>

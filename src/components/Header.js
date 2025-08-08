@@ -65,6 +65,8 @@ const Header = () => {
            <Link to="/products" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
           <Link to="/booking" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`}>Booking</Link>
           <Link to="/contact" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/contact')}`}>Contact</Link>
+          <Link to="/register" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/register')}`}>Register</Link>
+          <Link to="/login" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/login')}`}>Login</Link>
           <DarkModeToggle /> {/* Added DarkModeToggle */}
         </div>
       </div>
@@ -79,6 +81,8 @@ const Header = () => {
         <Link to="/booking" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`} onClick={toggleMobileMenu}>Booking</Link>
         <Link to="/products" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`} onClick={toggleMobileMenu}>Products</Link>
         <Link to="/contact" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/contact')}`} onClick={toggleMobileMenu}>Contact</Link>
+        <Link to="/register" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/register')}`} onClick={toggleMobileMenu}>Register</Link>
+        <Link to="/login" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/login')}`} onClick={toggleMobileMenu}>Login</Link>
         {/* DarkModeToggle is already in desktop view, might need to decide if it should be in mobile too */}
       </div>
     </header>

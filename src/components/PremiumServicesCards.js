@@ -11,9 +11,11 @@ const PremiumServiceCard = ({ image, title, description, aosDelay }) => {
       <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg mb-4" loading="lazy" />
       <h3 className="text-2xl font-bold mb-2 font-montserrat">{title}</h3>
       <p className="text-black mb-4 font-opensans">{description}</p>
-      <button className="bg-black text-yellow-500 py-2 px-5 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
+      <a href='/services' className="w-full">
+        <button className="bg-black text-yellow-500 py-2 px-5 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
         Learn More
       </button>
+      </a>
     </div>
   );
 };

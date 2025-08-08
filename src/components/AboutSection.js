@@ -17,6 +17,8 @@ const AboutSection = () => {
             <p className="text-lg text-gray-300 mb-6 font-opensans">
               Our team of certified technicians utilizes the latest diagnostic tools and quality parts to ensure your vehicle receives the best possible care. Whether it's routine maintenance or complex repairs, we've got you covered.
             </p>
+
+            
             <a
               href="/about" // Link to the About page
               className="inline-block bg-[#ECBE07] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#ECBE07] transition duration-300 font-montserrat mr-4" // Adjusted styling and added margin

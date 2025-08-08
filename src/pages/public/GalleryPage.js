@@ -56,7 +56,7 @@ const GalleryPage = () => {
 
       <SectionWrapper className="py-16">
         <h2
-          className="text-4xl font-bold text-center mb-12 text-gray-800"
+          className="text-4xl font-bold text-center mb-12 text-gray-800 py-9"
           data-aos="fade-down"
         >
           Our Work in Pictures

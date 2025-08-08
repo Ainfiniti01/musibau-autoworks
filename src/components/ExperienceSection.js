@@ -14,9 +14,11 @@ const ExperienceSection = () => {
             <p className="text-lg text-gray-300 mb-6 font-opensans">
               Our team continuously trains on the latest automotive technologies to ensure we can handle everything from classic cars to the newest models. Your satisfaction is our priority.
             </p>
-            <button className="bg-[#ECBE07] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#ECBE07] transition duration-300 font-montserrat">
+            <a href="/services" className="inline-block mb-4">
+              <button className="bg-[#ECBE07] text-black py-3 px-6 rounded-lg font-semibold hover:bg-[#ECBE07] transition duration-300 font-montserrat">
               View Our Services
             </button>
+            </a>
           </div>
 
           {/* Image Column */}
