@@ -13,7 +13,7 @@ import slide3 from '../assets/images/bg.jpg';
 const slides = [
   {
     image: slide1, // Use imported variable
-    heading: "Welcome to Musubi Autoworld",
+    heading: "Welcome to Musibau Autoworks",
     subheading: "Premium auto care with trusted hands",
     ctaText: "Book a Service",
     ctaLink: "/booking",

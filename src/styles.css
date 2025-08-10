@@ -9,7 +9,7 @@
   --color-gold-light: #ECBE07; /* Primary gold */
   --color-white: #ddd; /* Light gray for paragraphs */
   --color-gray-dark: #333333; /* Dark gray */
-  --color-gray-medium: #aaaaaa; /* Medium gray */
+  --color-gray-medium: #777777; /* Medium gray - increased contrast */
 
   --font-primary: 'Montserrat', sans-serif; /* Montserrat for headings */
   --font-secondary: 'Open Sans', sans-serif; /* Open Sans for body text */

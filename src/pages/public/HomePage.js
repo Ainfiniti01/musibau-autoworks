@@ -24,19 +24,19 @@ const HomePage = () => {
       <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
         <HeroSlider />
       </SectionWrapper>
-      <SectionWrapper className=""> {/* Added py-16 for spacing */}
+      <SectionWrapper className="py-16">
         <ServicesOverview />
       </SectionWrapper>
       <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
         <PremiumServicesCards />
       </SectionWrapper>
-      <SectionWrapper className=""> {/* Added py-16 for spacing */}
+      <SectionWrapper className="py-16">
         <ExperienceSection />
       </SectionWrapper>
       <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
         <WhyChooseUs />
       </SectionWrapper>
-<SectionWrapper className=""> {/* Added py-16 for spacing */}
+<SectionWrapper className="py-16">
   <section className="py-16 bg-[#0c0f1c] text-white text-center">
     <h2 className="text-3xl font-bold mb-2">OUR CLIENTS</h2>
     <p className="text-sm text-gray-400 mb-10">Trusted by top brands and partners</p>
@@ -50,7 +50,7 @@ const HomePage = () => {
     </div>
   </section>
 </SectionWrapper>
-      <SectionWrapper className=""> {/* Added py-16 for spacing */}
+      <SectionWrapper className="py-16">
         <AboutSection />
       </SectionWrapper>
       {/* <div className="text-center py-4">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify'; // Import toast
 import LoadingSpinner from './LoadingSpinner';
 
 const WebsiteInquiryForm = () => {
@@ -12,7 +13,7 @@ const WebsiteInquiryForm = () => {
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submissionStatus, setSubmissionStatus] = useState(null); // 'success' or 'error'
+  // Removed submissionStatus as toast will handle feedback
 
   const validate = () => {
     const newErrors = {};
@@ -33,20 +34,21 @@ const WebsiteInquiryForm = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => { // Made async
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
-    setSubmissionStatus(null);
 
-    // Simulate an async API call
-    setTimeout(() => {
+    try {
+      // Simulate an async API call
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate network delay
+
       // TODO: Replace this with a real API call
       const isSuccess = Math.random() > 0.2; // 80% chance of success
 
       if (isSuccess) {
-        setSubmissionStatus('success');
+        toast.success('Thank you for your inquiry! We will get back to you shortly.');
         setFormData({
           fullName: '',
           email: '',
@@ -55,10 +57,14 @@ const WebsiteInquiryForm = () => {
           budget: '',
         });
       } else {
-        setSubmissionStatus('error');
+        toast.error('Something went wrong. Please try again later.');
       }
+    } catch (error) {
+      console.error("Inquiry submission failed:", error);
+      toast.error("Failed to submit inquiry. Please try again.");
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   return (
@@ -122,17 +128,13 @@ const WebsiteInquiryForm = () => {
             aria-label="Preferred Budget"
           />
         </div>
-        <button type="submit" disabled={isSubmitting} aria-label="Submit Inquiry">
+        <button type="submit" disabled={isSubmitting} aria-label="Submit Inquiry"
+          className="px-8 py-3 bg-gold text-yellow font-bold rounded-lg hover:bg-gold-hover transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+        >
           {isSubmitting ? 'Submitting...' : 'Submit Inquiry'}
         </button>
       </form>
       {isSubmitting && <LoadingSpinner />}
-      {submissionStatus === 'success' && (
-        <p>Thank you for your inquiry! We will get back to you shortly.</p>
-      )}
-      {submissionStatus === 'error' && (
-        <p>Something went wrong. Please try again later.</p>
-      )}
     </div>
   );
 };

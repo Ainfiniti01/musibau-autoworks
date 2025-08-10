@@ -8,10 +8,9 @@ import ScrollToTopButton from './components/ScrollToTopButton'; // Import Scroll
 // Layouts
 import PublicLayout from './components/PublicLayout';
 import CustomerLayout from './components/CustomerLayout'; // Still needed for other customer routes if any
-import AdminLayout from './components/AdminLayout';
-import ProtectedRoute from './admin/components/ProtectedRoute';
 import ErrorBoundary from './components/ErrorBoundary';
-import ToastPlaceholder from './components/ToastPlaceholder'; // Import ToastPlaceholder
+import { ToastContainer } from 'react-toastify'; // Import ToastContainer
+import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
 import LoadingSpinner from './components/LoadingSpinner';
 
 // Page Components using React.lazy
@@ -32,13 +31,9 @@ const RegistrationPage = lazy(() => import('./pages/customer/RegistrationPage'))
 const CustomerDashboardPage = lazy(() => import('./pages/customer/CustomerDashboardPage')); // Corrected import
 
 // Admin Pages
-const AdminLogin = lazy(() => import('./admin/pages/Login.jsx'));
-const AdminDashboard = lazy(() => import('./admin/pages/Dashboard.jsx'));
-const AdminServices = lazy(() => import('./admin/pages/Services.jsx'));
-const AdminCustomers = lazy(() => import('./admin/pages/Customers.jsx'));
-const AdminBookings = lazy(() => import('./admin/pages/Bookings.jsx'));
-const AdminProducts = lazy(() => import('./admin/pages/Products.jsx'));
-
+const AdminRoutes = lazy(() => import('./admin/routes/AdminRoutes'));
+// Customer Pages
+const ForgotPasswordPage = lazy(() => import('./pages/customer/ForgotPasswordPage'));
 
 function App() {
   useEffect(() => {
@@ -72,69 +67,17 @@ function App() {
           <Route path="/customer/dashboard" element={<CustomerDashboardPage />} />
 
           {/* Admin Routes */}
-          <Route path="/admin/login" element={<ErrorBoundary><PublicLayout><AdminLogin /></PublicLayout></ErrorBoundary>} />
+          <Route path="/admin/*" element={<AdminRoutes />} />
 
-          {/* Admin Dashboard */}
-          <Route path="/admin/dashboard" element={
-            <ErrorBoundary>
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminDashboard />
-                </AdminLayout>
-              </ProtectedRoute>
-            </ErrorBoundary>
-          } />
-
-          {/* Admin Services */}
-          <Route path="/admin/services" element={
-            <ErrorBoundary>
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminServices />
-                </AdminLayout>
-              </ProtectedRoute>
-            </ErrorBoundary>
-          } />
-
-          {/* Admin Customers */}
-          <Route path="/admin/customers" element={
-            <ErrorBoundary>
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminCustomers />
-                </AdminLayout>
-              </ProtectedRoute>
-            </ErrorBoundary>
-          } />
-
-          {/* Admin Bookings */}
-          <Route path="/admin/bookings" element={
-            <ErrorBoundary>
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminBookings />
-                </AdminLayout>
-              </ProtectedRoute>
-            </ErrorBoundary>
-          } />
-
-          {/* Admin Products */}
-          <Route path="/admin/products" element={
-            <ErrorBoundary>
-              <ProtectedRoute>
-                <AdminLayout>
-                  <AdminProducts />
-                </AdminLayout>
-              </ProtectedRoute>
-            </ErrorBoundary>
-          } />
+          {/* Forgot Password Route */}
+          <Route path="/forgot-password" element={<ErrorBoundary><PublicLayout><ForgotPasswordPage /></PublicLayout></ErrorBoundary>} />
 
           {/* 404 Route */}
           <Route path="*" element={<ErrorBoundary><PublicLayout><NotFoundPage /></PublicLayout></ErrorBoundary>} />
         </Routes>
       </Suspense>
       <ScrollToTopButton />
-      <ToastPlaceholder />
+      <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
     </Router>
   );
 }

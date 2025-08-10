@@ -53,7 +53,7 @@ const socialIconClasses = "text-gray-400 hover:text-[#ECBE07] transition duratio
           </div>
         </div>
         <div className="text-center mt-12 text-gray-500 font-opensans">
-          &copy; 2025 Musibau Autoworks. All rights reserved.
+          © 2025 Musibau Autoworks. All rights reserved.
         </div>
       </div>
     </footer>

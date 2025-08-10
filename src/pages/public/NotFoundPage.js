@@ -6,7 +6,7 @@ const NotFoundPage = () => {
   return (
     <SectionWrapper>
       <div className="container mx-auto px-4 py-16 text-center">
-        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">404 - Page Not Found</h1>
+        <h1 className="text-4xl font-bold text-gray-800 dark:text-white mb-4 py-16">404 - Page Not Found</h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
           Oops! The page you are looking for does not exist. It might have been moved or deleted.
         </p>

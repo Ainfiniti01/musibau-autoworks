@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom'; // Import useLocation
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify'; // Import toast
+import { addGuestActivity } from '../utils/guestActivity';
 
-const BookingContactForm = () => {
+const BookingContactForm = ({ isDashboard = false }) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const serviceFromQuery = searchParams.get('service');
@@ -16,26 +16,18 @@ const BookingContactForm = () => {
     preferredDate: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); // New state for submission status
 
-  // Initialize message and serviceType state based on query parameter
   useEffect(() => {
     if (serviceFromQuery) {
       const decodedService = decodeURIComponent(serviceFromQuery);
       setFormData((prevData) => ({
         ...prevData,
         message: `Request: ${decodedService}`,
-        serviceType: decodedService, // Set serviceType to the decoded service name
+        serviceType: decodedService,
       }));
     }
   }, [serviceFromQuery]);
-
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,10 +37,10 @@ const BookingContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => { // Made async to simulate API call
     e.preventDefault();
+    setIsSubmitting(true); // Set submitting state to true
 
-    // Basic validation check for all fields
     if (
       !formData.fullName ||
       !formData.email ||
@@ -57,23 +49,41 @@ const BookingContactForm = () => {
       !formData.preferredDate ||
       !formData.message
     ) {
-      alert('Please fill in all required fields.');
+      toast.error('Please fill in all required fields.'); // Use toast for error
+      setIsSubmitting(false); // Reset submitting state
       return;
     }
 
-    // Simulate successful submission
-    console.log('Form submitted:', formData);
-    alert('Your request has been submitted successfully! We will contact you shortly.');
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate network delay
 
-    // Clear the form after submission
-    setFormData({
-      fullName: '',
-      email: '',
-      phoneNumber: '',
-      serviceType: '',
-      preferredDate: '',
-      message: '',
-    });
+      console.log('Form submitted:', formData);
+      toast.success('Your request has been submitted successfully! We will contact you shortly.'); // Use toast for success
+
+      // Add guest activity if not on the dashboard (assuming dashboard implies logged in)
+      if (!isDashboard) {
+        addGuestActivity({
+          type: 'booking',
+          details: formData,
+        });
+        toast.info("Booking saved! Login to track it."); // Toast for guest booking
+      }
+
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        serviceType: '',
+        preferredDate: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error("Booking submission failed:", error);
+      toast.error("Failed to submit booking. Please try again.");
+    } finally {
+      setIsSubmitting(false); // Reset submitting state to false
+    }
   };
 
   const serviceOptions = [
@@ -85,16 +95,17 @@ const BookingContactForm = () => {
     'Other',
   ];
 
-  // Determine if the message field was autofilled for styling
   const isMessageAutofilled = formData.message.startsWith('Request: ');
 
   return (
-    <section className="bg-[#0B0D1F] py-10 px-6 md:px-20" data-aos="fade-up">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white mb-8 py-10">Book Your Service or Contact Us</h2>
+    <div className={isDashboard ? "" : "bg-[#0B0D1F] py-10 px-6 md:px-20"}>
+      <div className={isDashboard ? "" : "container mx-auto"}>
+        {!isDashboard && (
+          <h2 className="text-3xl font-bold text-center text-white mb-8 py-10">Book Your Service or Contact Us</h2>
+        )}
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Full Name */}
-          <div className="flex flex-col" data-aos="fade-up" data-aos-delay="100">
+          <div className="flex flex-col">
             <label htmlFor="fullName" className="text-white mb-2">Full Name</label>
             <input
               type="text"
@@ -109,7 +120,7 @@ const BookingContactForm = () => {
           </div>
 
           {/* Email */}
-          <div className="flex flex-col" data-aos="fade-up" data-aos-delay="200">
+          <div className="flex flex-col">
             <label htmlFor="email" className="text-white mb-2">Email</label>
             <input
               type="email"
@@ -124,7 +135,7 @@ const BookingContactForm = () => {
           </div>
 
           {/* Phone Number */}
-          <div className="flex flex-col" data-aos="fade-up" data-aos-delay="300">
+          <div className="flex flex-col">
             <label htmlFor="phoneNumber" className="text-white mb-2">Phone Number</label>
             <input
               type="tel"
@@ -139,7 +150,7 @@ const BookingContactForm = () => {
           </div>
 
           {/* Service Type */}
-          <div className="flex flex-col" data-aos="fade-up" data-aos-delay="400">
+          <div className="flex flex-col">
             <label htmlFor="serviceType" className="text-white mb-2">Service Type</label>
             <select
               id="serviceType"
@@ -162,7 +173,7 @@ const BookingContactForm = () => {
           </div>
 
           {/* Preferred Date */}
-          <div className="flex flex-col" data-aos="fade-up" data-aos-delay="500">
+          <div className="flex flex-col">
             <label htmlFor="preferredDate" className="text-white mb-2">Preferred Date</label>
             <input
               type="date"
@@ -176,7 +187,7 @@ const BookingContactForm = () => {
           </div>
 
           {/* Message */}
-          <div className="flex flex-col md:col-span-2" data-aos="fade-up" data-aos-delay="600">
+          <div className="flex flex-col md:col-span-2">
             <label htmlFor="message" className="text-white mb-2">Message</label>
             <textarea
               id="message"
@@ -186,24 +197,25 @@ const BookingContactForm = () => {
               rows="5"
               required
               className={`p-3 rounded-lg border border-gold focus:border-gold-focus bg-transparent text-white placeholder-gray-400 focus:outline-none resize-none ${
-                isMessageAutofilled ? 'border-yellow-500' : '' // Highlight if autofilled
+                isMessageAutofilled ? 'border-yellow-500' : ''
               }`}
               placeholder="Enter your message"
             ></textarea>
           </div>
 
           {/* Submit Button */}
-          <div className="md:col-span-2 flex justify-center" data-aos="fade-up" data-aos-delay="700">
+          <div className="md:col-span-2 flex justify-center">
             <button
               type="submit"
-              className="px-8 py-3 bg-gold text-yellow font-bold rounded-lg hover:bg-gold-hover transition duration-300 ease-in-out transform hover:scale-105"
+              className="px-8 py-3 bg-gold text-yellow font-bold rounded-lg hover:bg-gold-hover transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled={isSubmitting} // Disable button when submitting
             >
-              Submit Request
+              {isSubmitting ? 'Submitting...' : 'Submit Request'}
             </button>
           </div>
         </form>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
+import { useAdminAuth } from '../context/AdminAuthContext';
 
 const ProtectedRoute = ({ children }) => {
-  // Mock authentication: replace with actual auth logic later
-  const isAuthenticated = localStorage.getItem('adminToken'); // Example: check for a token
+  const { isAdminLoggedIn } = useAdminAuth();
 
-  if (!isAuthenticated) {
+  if (!isAdminLoggedIn) {
     return <Navigate to="/admin/login" replace />;
   }
 

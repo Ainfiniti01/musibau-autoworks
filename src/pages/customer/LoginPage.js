@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import ToastPlaceholder from '../../components/ToastPlaceholder';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { getGuestActivities, clearGuestActivities } from '../../utils/guestActivity'; // Import guest activity utilities
 
 const LoginPage = () => {
   const [toast, setToast] = useState({ message: '', type: '' });
@@ -32,8 +33,15 @@ const LoginPage = () => {
       // In a real app, you would make an API call here
       // For now, we'll simulate success and redirect
       setToast({ message: 'Login successful!', type: 'success' });
+      const guestActivities = getGuestActivities(); // Corrected function name
+      if (guestActivities.length > 0) {
+        console.log('Guest activity found on login:', guestActivities);
+        // In a real app, you would send this guestActivities to your backend
+        // to attach it to the newly logged-in user.
+        clearGuestActivities(); // Corrected function name
+      }
       setTimeout(() => {
-        navigate('/dashboard'); // Redirect to dashboard
+        navigate('/customer/dashboard'); // Redirect to customer dashboard
       }, 1500); // Delay redirect to show toast message
     }
   };
@@ -89,7 +97,7 @@ const LoginPage = () => {
               </label>
             </div>
             <div className="text-sm">
-              <a href="#" className="font-medium text-[#ECBE07] hover:text-[#d4a806]">
+              <a href="/forgot-password" className="font-medium text-[#ECBE07] hover:text-[#d4a806]">
                 Forgot your password?
               </a>
             </div>

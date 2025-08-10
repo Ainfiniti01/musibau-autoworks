@@ -33,17 +33,21 @@ const ServicesOverview = () => {
         >
           Our Services
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <ServiceCard
-              key={index}
-              icon={service.icon}
-              label={service.label}
-              aosDelay={index * 200}
-              link={`/contact?service=${encodeURIComponent(service.label)}`}
-            />
-          ))}
-        </div>
+        {services.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                icon={service.icon}
+                label={service.label}
+                aosDelay={index * 200}
+                link={`/contact?service=${encodeURIComponent(service.label)}`}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="text-center text-gray-400 text-lg">No services available yet. Please check back later!</p>
+        )}
       </div>
     </section>
   );

@@ -8,9 +8,14 @@ import 'aos/dist/aos.css'; // Import AOS CSS
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State for mobile menu
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false); // State for profile dropdown
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleProfileDropdown = () => {
+    setIsProfileDropdownOpen(!isProfileDropdownOpen);
   };
 
   const location = useLocation(); // Get current location
@@ -26,6 +31,10 @@ const Header = () => {
 
   // Function to determine if a link should be active
   const getActiveClass = (path) => {
+    // For profile links, we might want to check for specific paths or a general active state
+    if (path === '/customer/dashboard' || path === '/settings') {
+      return location.pathname.startsWith('/customer') || location.pathname.startsWith('/settings') ? 'active-link' : '';
+    }
     return location.pathname === path ? 'active-link' : '';
   };
 
@@ -58,15 +67,25 @@ const Header = () => {
 
         {/* Navigation Links for Desktop */}
         <div className="hidden md:flex space-x-6 items-center">
-          <Link to="/about" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/about')}`}>About</Link>
           <Link to="/" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/')}`}>Home</Link>
           <Link to="/services" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/services')}`}>Services</Link>
-          <Link to="/gallery" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/gallery')}`}>Gallery</Link>
-           <Link to="/products" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
-          <Link to="/booking" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`}>Booking</Link>
-          <Link to="/contact" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/contact')}`}>Contact</Link>
-          <Link to="/register" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/register')}`}>Register</Link>
-          <Link to="/login" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/login')}`}>Login</Link>
+          <Link to="/products" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`}>Products</Link>
+          <Link to="/booking" className={`text-white hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`}>Book Now</Link>
+
+          {/* Profile Dropdown */}
+          <div className="relative">
+            <button onClick={toggleProfileDropdown} className="text-white focus:outline-none flex items-center">
+              <FaUserCircle className="w-6 h-6 mr-1" /> {/* Profile Icon */}
+            </button>
+            {isProfileDropdownOpen && (
+              <div className="absolute right-0 mt-2 w-48 bg-gray-700 rounded-md shadow-lg py-1 z-50">
+                <Link to="/customer/dashboard" className={`block px-4 py-2 text-sm text-white hover:bg-gray-600 ${getActiveClass('/customer/dashboard')}`} onClick={toggleProfileDropdown}>Dashboard</Link>
+                <Link to="/settings" className={`block px-4 py-2 text-sm text-white hover:bg-gray-600 ${getActiveClass('/settings')}`} onClick={toggleProfileDropdown}>Settings</Link>
+                {/* Assuming /logout is a route that handles logout, or it might trigger a function */}
+                <Link to="/logout" className="block px-4 py-2 text-sm text-white hover:bg-gray-600" onClick={toggleProfileDropdown}>Logout</Link>
+              </div>
+            )}
+          </div>
           <DarkModeToggle /> {/* Added DarkModeToggle */}
         </div>
       </div>
@@ -74,15 +93,25 @@ const Header = () => {
       {/* Mobile Menu */}
       {/* Conditionally render the mobile menu */}
       <div className={`md:hidden ${isMobileMenuOpen ? 'block' : 'hidden'} absolute top-28 left-0 right-0 z-50 w-full bg-gray-700 py-2 shadow-md`}>
-        <Link to="/about" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/about')}`} onClick={toggleMobileMenu}>About</Link>
         <Link to="/" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/')}`} onClick={toggleMobileMenu}>Home</Link>
         <Link to="/services" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/services')}`} onClick={toggleMobileMenu}>Services</Link>
-        <Link to="/gallery" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/gallery')}`} onClick={toggleMobileMenu}>Gallery</Link>
-        <Link to="/booking" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`} onClick={toggleMobileMenu}>Booking</Link>
         <Link to="/products" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/products')}`} onClick={toggleMobileMenu}>Products</Link>
-        <Link to="/contact" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/contact')}`} onClick={toggleMobileMenu}>Contact</Link>
-        <Link to="/register" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/register')}`} onClick={toggleMobileMenu}>Register</Link>
-        <Link to="/login" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/login')}`} onClick={toggleMobileMenu}>Login</Link>
+        <Link to="/booking" className={`block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans ${getActiveClass('/booking')}`} onClick={toggleMobileMenu}>Book Now</Link>
+
+        {/* Mobile Profile Dropdown */}
+        <div className="relative">
+          <button onClick={toggleProfileDropdown} className="block w-full text-left text-white py-2 px-4 hover:bg-gray-600 flex items-center">
+            <FaUserCircle className="w-6 h-6 mr-1" /> {/* Profile Icon */}
+            Profile
+          </button>
+          {isProfileDropdownOpen && (
+            <div className="absolute left-0 mt-2 w-full bg-gray-700 rounded-md shadow-lg py-1 z-50">
+              <Link to="/customer/dashboard" className={`block px-4 py-2 text-sm text-white hover:bg-gray-600 ${getActiveClass('/customer/dashboard')}`} onClick={toggleProfileDropdown}>Dashboard</Link>
+              <Link to="/settings" className={`block px-4 py-2 text-sm text-white hover:bg-gray-600 ${getActiveClass('/settings')}`} onClick={toggleProfileDropdown}>Settings</Link>
+              <Link to="/logout" className="block px-4 py-2 text-sm text-white hover:bg-gray-600" onClick={toggleProfileDropdown}>Logout</Link>
+            </div>
+          )}
+        </div>
         {/* DarkModeToggle is already in desktop view, might need to decide if it should be in mobile too */}
       </div>
     </header>
