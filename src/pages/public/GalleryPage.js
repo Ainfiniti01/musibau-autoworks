@@ -54,7 +54,7 @@ const GalleryPage = () => {
         <meta name="description" content="View our gallery of automotive work at Musibau AutoWorks." />
       </Helmet>
 
-      <SectionWrapper className="py-16">
+      <SectionWrapper className="py-16 px-6">
         <h2
           className="text-4xl font-bold text-center mb-12 text-gray-800 py-9"
           data-aos="fade-down"

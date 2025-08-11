@@ -29,6 +29,7 @@ const NotFoundPage = lazy(() => import('./pages/public/NotFoundPage'));
 const LoginPageCustomer = lazy(() => import('./pages/customer/LoginPage'));
 const RegistrationPage = lazy(() => import('./pages/customer/RegistrationPage'));
 const CustomerDashboardPage = lazy(() => import('./pages/customer/CustomerDashboardPage')); // Corrected import
+const CustomerProfilePage = lazy(() => import('./pages/customer/CustomerProfilePage.js')); // Added import
 
 // Admin Pages
 const AdminRoutes = lazy(() => import('./admin/routes/AdminRoutes'));
@@ -47,7 +48,7 @@ function App() {
   const isGitHub = window.location.hostname.includes("github.io");
 
   return (
-    <BrowserRouter basename="/musibau-autoworks">
+    <BrowserRouter>
       <RouteChangeTracker />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
@@ -67,6 +68,7 @@ function App() {
           <Route path="/register" element={<ErrorBoundary><PublicLayout><RegistrationPage /></PublicLayout></ErrorBoundary>} />
           {/* Customer Dashboard Route - Adjusted to match user suggestion */}
           <Route path="/customer/dashboard" element={<CustomerDashboardPage />} />
+          <Route path="/customer/profile" element={<CustomerProfilePage />} /> {/* Updated route */}
 
           {/* Admin Routes */}
           <Route path="/admin/*" element={<AdminRoutes />} />

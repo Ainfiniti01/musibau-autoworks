@@ -33,23 +33,29 @@ const Navbar = () => {
 
         {/* Navigation Links for Desktop */}
         <div className="hidden md:flex space-x-6">
+          <Link to="/about" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">About</Link>
+          <Link to="/" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Home</Link>
           <Link to="/services" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Services</Link>
           <Link to="/gallery" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Gallery</Link>
-          <Link to="/about" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">About Us</Link>
+          <Link to="/booking" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Booking</Link>
+          <Link to="/products" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Products</Link>
           <Link to="/contact" className="text-white hover:text-[#ECBE07] transition duration-300 font-opensans">Contact</Link>
-          <Link to="/login" className="text-sm text-blue-600 hover:underline">Login</Link>
           <Link to="/register" className="ml-4 text-sm text-green-600 hover:underline">Register</Link>
+          <Link to="/login" className="text-sm text-blue-600 hover:underline">Login</Link>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} mt-4`}>
+        <Link to="/about" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>About</Link>
+        <Link to="/" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Home</Link>
         <Link to="/services" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Services</Link>
         <Link to="/gallery" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Gallery</Link>
-        <Link to="/about" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>About Us</Link>
+        <Link to="/booking" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Booking</Link>
+        <Link to="/products" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Products</Link>
         <Link to="/contact" className="block text-white py-2 hover:text-[#ECBE07] transition duration-300 font-opensans" onClick={toggleMenu}>Contact</Link>
-        <Link to="/login" className="block text-sm text-blue-600 hover:underline py-2" onClick={toggleMenu}>Login</Link>
         <Link to="/register" className="block text-sm text-green-600 hover:underline py-2" onClick={toggleMenu}>Register</Link>
+        <Link to="/login" className="block text-sm text-blue-600 hover:underline py-2" onClick={toggleMenu}>Login</Link>
       </div>
     </nav>
   );

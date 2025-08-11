@@ -3,6 +3,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Helmet } from 'react-helmet-async';
 import BookingContactForm from '../../components/BookingContactForm'; // Import the new component
+import WebsiteInquiryForm from '../../components/WebsiteInquiryForm';
 
 const ContactPage = () => {
   return (
@@ -11,8 +12,11 @@ const ContactPage = () => {
         <title>Contact Us</title>
       </Helmet>
       <div className="container mx-auto py-10 px-6 md:px-20">
-          <div data-aos="fade-up">
+          <div data-aos="fade-up" className="mb-8">
             <BookingContactForm />
+          </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <WebsiteInquiryForm />
           </div>
 
         <div className="contact-map-container py-10" data-aos="fade-up" data-aos-delay="200">

@@ -2,12 +2,12 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import BookingContactForm from '../../components/BookingContactForm';
-import WebsiteInquiryForm from '../../components/WebsiteInquiryForm';
+// import WebsiteInquiryForm from '../../components/WebsiteInquiryForm';
 import { clearGuestActivities } from '../../utils/guestActivity';
 import BookingCard from '../../components/BookingCard';
 // Import Header and Footer components
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Footer from '../../components/MinimalFooter.js';
 
 const CustomerDashboardPage = () => {
   // Placeholder for customer data - in a real app, this would come from an API
@@ -38,7 +38,7 @@ const CustomerDashboardPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
+    <div className="min-h-screen bg-gray-100">
       <Helmet>
         <title>Musibau AutoWorks - Customer Dashboard</title>
         <meta name="description" content="Welcome to your Musibau AutoWorks customer dashboard." />
@@ -47,7 +47,7 @@ const CustomerDashboardPage = () => {
       {/* Header Component */}
       <Header />
 
-      <div className="max-w-7xl mx-auto py-10">
+      <div className="max-w-7xl mx-auto py-10 px-6">
         <div className="flex justify-between items-center mb-6">
           <h1 className="text-4xl font-bold text-[#004040]">Welcome, {customerData.name}!</h1>
           <button
@@ -155,9 +155,9 @@ const CustomerDashboardPage = () => {
           <div className="bg-white p-6 rounded-lg shadow-md mb-8">
             <h2 className="text-2xl font-semibold text-[#004040] mb-4">Need Assistance?</h2>
             <p className="text-gray-600">Contact us directly for any inquiries or support.</p>
-            <div className="mt-4">
-              <WebsiteInquiryForm isDashboard={true} />
-            </div>
+          <div className="mt-4">
+            {/* WebsiteInquiryForm removed from dashboard */}
+          </div>
             <button
               onClick={() => navigate('/contact')}
               className="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#ECBE07] hover:bg-[#d4a806] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ECBE07]"
