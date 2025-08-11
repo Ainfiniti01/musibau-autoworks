@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import RouteChangeTracker from './components/RouteChangeTracker';
 import AOS from 'aos'; // Import AOS
 import 'aos/dist/aos.css'; // Import AOS CSS
@@ -48,7 +48,7 @@ function App() {
   const isGitHub = window.location.hostname.includes("github.io");
 
   return (
-    <BrowserRouter>
+    <Router>
       <RouteChangeTracker />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
@@ -82,7 +82,7 @@ function App() {
       </Suspense>
       <ScrollToTopButton />
       <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
-    </BrowserRouter>
+    </Router>
   );
 }
 
