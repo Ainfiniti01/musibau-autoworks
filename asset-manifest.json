@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/musibau-autoworks/static/css/main.bca8fdc3.css",
-    "main.js": "/musibau-autoworks/static/js/main.9c6f8ce2.js",
+    "main.js": "/musibau-autoworks/static/js/main.015d9086.js",
     "static/css/731.89da4d5a.chunk.css": "/musibau-autoworks/static/css/731.89da4d5a.chunk.css",
     "static/js/731.c224793b.chunk.js": "/musibau-autoworks/static/js/731.c224793b.chunk.js",
     "static/js/331.f1964611.chunk.js": "/musibau-autoworks/static/js/331.f1964611.chunk.js",
@@ -32,7 +32,7 @@
     "static/media/elect.jpg": "/musibau-autoworks/static/media/elect.c0dfb1970e5e756af26c.jpg",
     "index.html": "/musibau-autoworks/index.html",
     "main.bca8fdc3.css.map": "/musibau-autoworks/static/css/main.bca8fdc3.css.map",
-    "main.9c6f8ce2.js.map": "/musibau-autoworks/static/js/main.9c6f8ce2.js.map",
+    "main.015d9086.js.map": "/musibau-autoworks/static/js/main.015d9086.js.map",
     "731.89da4d5a.chunk.css.map": "/musibau-autoworks/static/css/731.89da4d5a.chunk.css.map",
     "731.c224793b.chunk.js.map": "/musibau-autoworks/static/js/731.c224793b.chunk.js.map",
     "331.f1964611.chunk.js.map": "/musibau-autoworks/static/js/331.f1964611.chunk.js.map",
@@ -56,6 +56,6 @@
   },
   "entrypoints": [
     "static/css/main.bca8fdc3.css",
-    "static/js/main.9c6f8ce2.js"
+    "static/js/main.015d9086.js"
   ]
 }
