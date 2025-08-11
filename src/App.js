@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import RouteChangeTracker from './components/RouteChangeTracker';
 import AOS from 'aos'; // Import AOS
 import 'aos/dist/aos.css'; // Import AOS CSS
@@ -44,8 +44,10 @@ function App() {
     });
   }, []);
 
+  const isGitHub = window.location.hostname.includes("github.io");
+
   return (
-    <Router>
+    <BrowserRouter basename="/musibau-autoworks">
       <RouteChangeTracker />
       <Suspense fallback={<LoadingSpinner />}>
         <Routes>
@@ -78,7 +80,7 @@ function App() {
       </Suspense>
       <ScrollToTopButton />
       <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
-    </Router>
+    </BrowserRouter>
   );
 }
 

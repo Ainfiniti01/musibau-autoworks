@@ -5,6 +5,7 @@ import './index.css';
 import './styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
 import { AppProvider } from './context/AppContext';
 import { HelmetProvider } from 'react-helmet-async';
 
@@ -14,12 +15,14 @@ const GA_MEASUREMENT_ID = "G-XXXXXXXXXX";
 ReactGA.initialize(GA_MEASUREMENT_ID);
 ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search });
 
+const isGitHub = window.location.hostname.includes("github.io");
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HelmetProvider>
       <AppProvider>
-        <App />
+          <App />
       </AppProvider>
     </HelmetProvider>
   </React.StrictMode>
