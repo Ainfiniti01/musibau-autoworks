@@ -12,30 +12,26 @@ const WebInquiryForm = () => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-    setSubmitted(false);
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    try {
-      // TODO: Replace with real API endpoint from client
-      const API_URL = 'https://jsonplaceholder.typicode.com/posts';
-      const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify(formData),
-      });
+  const name = formData.company; // Using company as name
+  const email = formData.email;
+  const enquiry = formData.inquiry;
 
-      if (!response.ok) throw new Error('Inquiry failed');
-      setSubmitted(true);
-      setFormData({ company: '', email: '', inquiry: '' });
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const message = `New enquiry from website:
+Name: ${name}
+Email: ${email}
+Message: ${enquiry}`;
+
+  const phoneNumber = '09095707751';
+  const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, '_blank');
+
+  // Reset form after action
+  setFormData({ company: '', email: '', inquiry: '' });
+};
 
   return (
     <form onSubmit={handleSubmit}>

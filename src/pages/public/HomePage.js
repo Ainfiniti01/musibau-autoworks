@@ -21,23 +21,23 @@ const HomePage = () => {
         <meta name="description" content="Welcome to Musibau AutoWorks, your premier destination for reliable automotive services." />
       </Helmet>
 
-      <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
+      <SectionWrapper className=""> {/* Added py-16 for spacing */}
         <HeroSlider />
       </SectionWrapper>
-      <SectionWrapper className="py-16">
+      <SectionWrapper className="py-10">
         <ServicesOverview />
       </SectionWrapper>
-      <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
+      <SectionWrapper className=""> {/* Added py-16 for spacing */}
         <PremiumServicesCards />
       </SectionWrapper>
-      <SectionWrapper className="py-16">
+      <SectionWrapper className="py-10">
         <ExperienceSection />
       </SectionWrapper>
-      <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
+      <SectionWrapper className="py-"> {/* Added py-16 for spacing */}
         <WhyChooseUs />
       </SectionWrapper>
-<SectionWrapper className="py-16">
-  <section className="py-16 bg-[#0c0f1c] text-white text-center">
+<SectionWrapper className="py-10">
+  <section className="py-10 bg-[#0c0f1c] text-white text-center">
     <h2 className="text-3xl font-bold mb-2">OUR CLIENTS</h2>
     <p className="text-sm text-gray-400 mb-10">Trusted by top brands and partners</p>
 
@@ -50,7 +50,7 @@ const HomePage = () => {
     </div>
   </section>
 </SectionWrapper>
-      <SectionWrapper className="py-16">
+      <SectionWrapper className="py-10">
         <AboutSection />
       </SectionWrapper>
       {/* <div className="text-center py-4">
@@ -58,10 +58,10 @@ const HomePage = () => {
           Learn More About Us
         </Link>
       </div> */}
-      <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
+      <SectionWrapper className="py-10"> {/* Added py-16 for spacing */}
         <TestimonialsOrMap />
       </SectionWrapper>
-      <SectionWrapper className="py-16"> {/* Added py-16 for spacing */}
+      <SectionWrapper className="py-10"> {/* Added py-16 for spacing */}
         <ReviewsSection /> {/* Render the new ReviewsSection */}
       </SectionWrapper>
 

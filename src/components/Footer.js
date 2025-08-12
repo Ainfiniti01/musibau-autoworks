@@ -46,9 +46,9 @@ const socialIconClasses = "text-gray-400 hover:text-[#ECBE07] transition duratio
               <a href="#" className={socialIconClasses} aria-label="Twitter"><FaTwitter /></a>
               <a href="#" className={socialIconClasses} aria-label="Instagram"><FaInstagram /></a>
               <a href="#" className={socialIconClasses} aria-label="LinkedIn"><FaLinkedinIn /></a>
-              <a href="#" className={socialIconClasses} aria-label="LinkedIn"><FaYoutube /></a>
-              <a href="tel:+1234567890" className={socialIconClasses} aria-label="LinkedIn"><FaPhone /></a>
-              <a href="#" className={socialIconClasses} aria-label="LinkedIn"><FaMapMarkerAlt /></a>
+              <a href="#" className={socialIconClasses} aria-label="Youtube"><FaYoutube /></a>
+              <a href="tel:+1234567890" className={socialIconClasses} aria-label="Contact"><FaPhone /></a>
+              <a href="#" className={socialIconClasses} aria-label="Location"><FaMapMarkerAlt /></a>
             </div>
           </div>
         </div>
