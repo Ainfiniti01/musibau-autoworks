@@ -287,10 +287,10 @@ const Products = () => {
                       <td className="px-4 py-2">{product.category}</td>
                       <td className="px-4 py-2">{product.stock}</td>
                       <td className="px-4 py-2 flex gap-2">
-                        <button onClick={() => handleEditProduct(product)} className="bg-primary text-dark hover:bg-yellow-400 transition px-3 py-1 rounded flex items-center gap-1">
+                        <button onClick={() => handleEditProduct(product)} className="bg-yellow-500 hover:bg-yellow-600 text-white transition px-3 py-1 rounded flex items-center gap-1">
                           <FiEdit /> Edit
                         </button>
-                        <button onClick={() => handleDeleteProduct(product.id)} className="bg-primary text-dark hover:bg-yellow-400 transition px-3 py-1 rounded flex items-center gap-1">
+                        <button onClick={() => handleDeleteProduct(product.id)} className="bg-red-500 hover:bg-yellow-600 text-white transition px-3 py-1 rounded flex items-center gap-1">
                           <FiTrash2 /> Delete
                         </button>
                       </td>

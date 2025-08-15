@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const ReviewsSection = () => {
   // Placeholder for reviews data. In a real app, this would come from an API or a data file.
@@ -57,12 +59,10 @@ const ReviewsSection = () => {
         ))}
       </div>
       <div className="text-center mt-12">
-        <a
-          href="/reviews" // Link to reviews page or About/Services page as per suggestion
-          className="text-xl font-semibold text-[#ECBE07] hover:text-[#ECBE07] transition duration-300"
-        >
-          Read More Testimonials →
-        </a>
+    <Link to="/about#reviews" className="text-xl font-semibold text-[#ECBE07] hover:text-[#ECBE07] transition duration-300">
+              Read More Testimonials →
+    </Link>
+
       </div>
     </section>
   );

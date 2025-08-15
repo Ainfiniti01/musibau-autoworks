@@ -8,7 +8,7 @@ const ProductCard = ({ imageUrl, title, description, buttonText, link, price }) 
         className="bg-dark text-white rounded shadow-md p-4 overflow-hidden"
         data-aos="fade-up"
       >
-        <img src={imageUrl} alt={title} className="w-full h-48 object-cover scale-100 transition duration-300" />
+<img src={imageUrl} alt={title} className="w-full object-contain scale-100 transition duration-300" />
         <div className="p-4">
           <h3 className="text-primary">{title}</h3>
           <p className="text-gray-600 mb-2">

@@ -8,6 +8,7 @@ import ScrollToTopButton from './components/ScrollToTopButton'; // Import Scroll
 // Layouts
 import PublicLayout from './components/PublicLayout';
 import CustomerLayout from './components/CustomerLayout'; // Still needed for other customer routes if any
+import OrganizationLayout from './components/OrganizationLayout'; // Import OrganizationLayout
 import ErrorBoundary from './components/ErrorBoundary';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
@@ -20,7 +21,6 @@ const IndividualServicePage = lazy(() => import('./pages/public/IndividualServic
 const BookingPage = lazy(() => import('./pages/public/BookingPage'));
 const ProductsPage = lazy(() => import('./pages/public/ProductsPage'));
 const ContactPage = lazy(() => import('./pages/public/ContactPage'));
-const ReviewsPage = lazy(() => import('./pages/public/ReviewsPage'));
 const GalleryPage = lazy(() => import('./pages/public/GalleryPage'));
 const AboutPage = lazy(() => import('./pages/public/AboutPage'));
 const NotFoundPage = lazy(() => import('./pages/public/NotFoundPage'));
@@ -30,6 +30,14 @@ const LoginPageCustomer = lazy(() => import('./pages/customer/LoginPage'));
 const RegistrationPage = lazy(() => import('./pages/customer/RegistrationPage'));
 const CustomerDashboardPage = lazy(() => import('./pages/customer/CustomerDashboardPage')); // Corrected import
 const CustomerProfilePage = lazy(() => import('./pages/customer/CustomerProfilePage.js')); // Added import
+const ServiceHistoryPage = lazy(() => import('./pages/customer/ServiceHistoryPage')); // Added import
+const BookingHistoryPage = lazy(() => import('./pages/customer/BookingHistoryPage')); // Added import
+
+// Organization Pages
+const OrganizationDashboardPage = lazy(() => import('./pages/organization/OrganizationDashboardPage'));
+const OrganizationProfilePage = lazy(() => import('./pages/organization/OrganizationProfilePage'));
+const OrganizationServiceHistoryPage = lazy(() => import('./pages/organization/OrganizationServiceHistoryPage')); // Added import
+const OrganizationBookingHistoryPage = lazy(() => import('./pages/organization/OrganizationBookingHistoryPage')); // Added import
 
 // Admin Pages
 const AdminRoutes = lazy(() => import('./admin/routes/AdminRoutes'));
@@ -59,7 +67,6 @@ function App() {
           <Route path="/booking" element={<ErrorBoundary><PublicLayout><BookingPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/products" element={<ErrorBoundary><PublicLayout><ProductsPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/contact" element={<ErrorBoundary><PublicLayout><ContactPage /></PublicLayout></ErrorBoundary>} />
-          <Route path="/reviews" element={<ErrorBoundary><PublicLayout><ReviewsPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/gallery" element={<ErrorBoundary><PublicLayout><GalleryPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/about" element={<ErrorBoundary><PublicLayout><AboutPage /></PublicLayout></ErrorBoundary>} />
 
@@ -67,8 +74,16 @@ function App() {
           <Route path="/login" element={<ErrorBoundary><PublicLayout><LoginPageCustomer /></PublicLayout></ErrorBoundary>} />
           <Route path="/register" element={<ErrorBoundary><PublicLayout><RegistrationPage /></PublicLayout></ErrorBoundary>} />
           {/* Customer Dashboard Route - Adjusted to match user suggestion */}
-          <Route path="/customer/dashboard" element={<CustomerDashboardPage />} />
-          <Route path="/customer/profile" element={<CustomerProfilePage />} /> {/* Updated route */}
+          <Route path="/customer/dashboard" element={<CustomerLayout><CustomerDashboardPage /></CustomerLayout>} />
+          <Route path="/customer/profile" element={<CustomerLayout><CustomerProfilePage /></CustomerLayout>} /> {/* Updated route */}
+          <Route path="/customer/service-history" element={<CustomerLayout><ServiceHistoryPage /></CustomerLayout>} /> {/* New route */}
+          <Route path="/customer/booking-history" element={<CustomerLayout><BookingHistoryPage /></CustomerLayout>} /> {/* New route */}
+
+          {/* Organization Routes */}
+          <Route path="/organization/dashboard" element={<OrganizationLayout><OrganizationDashboardPage /></OrganizationLayout>} />
+          <Route path="/organization/profile" element={<OrganizationLayout><OrganizationProfilePage /></OrganizationLayout>} />
+          <Route path="/organization/service-history" element={<OrganizationLayout><OrganizationServiceHistoryPage /></OrganizationLayout>} /> {/* New route */}
+          <Route path="/organization/booking-history" element={<OrganizationLayout><OrganizationBookingHistoryPage /></OrganizationLayout>} /> {/* New route */}
 
           {/* Admin Routes */}
           <Route path="/admin/*" element={<AdminRoutes />} />

@@ -5,8 +5,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
 // Import images from the assets/images folder
-import slide1 from '../assets/images/background.png';
-import slide2 from '../assets/images/Chassis_Repair.jpg';
+import slide1 from '../assets/images/logo1.png';
+import slide2 from '../assets/images/background.png';
 import slide3 from '../assets/images/bg.jpg';
 // import others as needed
 
@@ -47,8 +47,8 @@ export default function HeroSlider() {
       {slides.map((slide, index) => (
         <SwiperSlide
           key={index}
-          className="min-h-screen bg-cover bg-center flex items-center justify-center md:min-h-[70vh]"
-          style={{ backgroundImage: `url(${slide.image})` }}
+          className="min-h-[70vh] bg-cover sm:bg-top flex items-center justify-center md:min-h-[70vh] md:bg-center"
+          style={{ backgroundImage: `url(${slide.image})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}
         >
           <div className="bg-black/60 w-full h-full flex flex-col justify-center items-center text-white px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4">{slide.heading}</h1>

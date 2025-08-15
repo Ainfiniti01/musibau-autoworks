@@ -9,7 +9,7 @@ const PremiumServiceCard = ({ image, title, description, aosDelay }) => {
       data-aos-delay={aosDelay}
     >
       <img src={image} alt={title} className="w-full h-48 object-cover rounded-t-lg mb-4" loading="lazy" />
-      <h3 className="text-2xl font-bold mb-2 font-montserrat">{title}</h3>
+      <h3 className="text-xl font-bold mt-4 text-black drop-shadow-md">{title}</h3>
       <p className="text-black mb-4 font-opensans">{description}</p>
       <a href='/services' className="w-full">
         <button className="bg-black text-yellow-500 py-2 px-5 rounded-lg font-semibold hover:bg-gray-800 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-opacity-50">
@@ -23,22 +23,22 @@ const PremiumServiceCard = ({ image, title, description, aosDelay }) => {
 const PremiumServicesCards = () => {
   const premiumServices = [
     {
-      image: '/assets/images/engine.jpg',
+      image: require('../assets/images/engine.jpg'),
       title: 'Engine Overhaul',
       description: 'Comprehensive engine services to keep your vehicle running smoothly.',
     },
     {
-      image: '/assets/images/Chassis_Repair.jpg',
+      image: require('../assets/images/Chassis_Repair.jpg'),
       title: 'Chassis Repair',
       description: 'Expert repair and maintenance for your vehicle\'s chassis.',
     },
     {
-      image: '/assets/images/elect.jpg',
+      image: require('../assets/images/elect.jpg'),
       title: 'Electrical Diagnostics',
       description: 'Advanced diagnostics for all your vehicle\'s electrical systems.',
     },
     {
-      image: '/assets/images/elect.jpg',
+      image: require('../assets/images/General_Maintenance.jpg'),
       title: 'General Maintenace',
       description: 'Advanced diagnostics for all your vehicle\'s electrical systems.',
     },

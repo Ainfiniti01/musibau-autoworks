@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { getGuestActivities, clearGuestActivities } from '../../utils/guestActivity'; // Import guest activity utilities
+import { Link } from 'react-router-dom';
 
 const RegistrationPage = () => {
   const [accountType, setAccountType] = useState('customer');
@@ -87,7 +88,12 @@ const RegistrationPage = () => {
             // to attach it to the newly registered user.
             clearGuestActivities(); // Corrected function name
           }
-          navigate('/login'); // Redirect to login page on successful registration
+          // Redirect based on account type
+          if (accountType === 'organization') {
+            navigate('/organization/dashboard');
+          } else {
+            navigate('/customer/dashboard');
+          }
         } else {
           // Handle registration failure (e.g., show error message from backend)
           console.error('Registration failed:', simulatedResponse.message);
@@ -265,7 +271,7 @@ const RegistrationPage = () => {
               Register
             </button>
             <p className="text-center text-sm text-gray-600 mt-4">
-              Already have an account? <a href="/login" className="text-[#ECBE07] hover:underline">Login</a>
+              Already have an account? <Link to="/login" className="text-[#ECBE07] hover:underline"> Login</Link>
             </p>
         </form>
       </div>

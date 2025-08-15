@@ -4,14 +4,23 @@ import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaPhone, 
 
 const Footer = () => {
 const socialIconClasses = "text-gray-400 hover:text-[#ECBE07] transition duration-300 text-2xl mx-2";
+const aboutImage = require('../assets/images/logo.png');
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12">
+    <footer className="bg-deepNavy text-gray-300 py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           {/* Logo and Contact Info */}
           <div className="text-center md:text-left mb-8 md:mb-0">
-            <img src="../assets/images/background.png" alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" />
+         {/* Image Column */}
+          <div className="w-full flex justify-center mb-4 ">
+            <img
+              src={aboutImage}
+              alt="Musibau Autoworks"
+              className="mx-auto w-24 rounded-sm object-contain drop-shadow-lg"
+            />
+          </div> 
+            {/* <img src="" alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" /> */}
             <p className="font-opensans">123 Automotive Lane, Car City, CA 90210</p>
             <p className="font-opensans">Phone: (123) 456-7890</p>
             <p className="font-opensans">Email: info@musibauautoworks.com</p>

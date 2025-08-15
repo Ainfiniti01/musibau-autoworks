@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+    const logo = require('../assets/images/logo.png');
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,7 +14,18 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo/Brand */}
         <Link to="/" className="text-white text-2xl font-bold font-montserrat">
-          Musibau Auto Works
+          {/* Image Column */}
+          <div className="flex items-center space-x-3">
+            <img
+              src={logo}
+              alt="Musibau Autoworks"
+              className="h-16 w-auto rounded-sm object-contain drop-shadow"
+            />
+            <span className="text-lg font-bold text-white">
+              Musibau Auto Works
+            </span>
+          </div>
+          {/* Musibau Auto Works */}
         </Link>
 
         {/* Hamburger Icon for Mobile */}

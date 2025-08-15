@@ -32,6 +32,8 @@ const Bookings = () => {
 
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
+  const [filterUserType, setFilterUserType] = useState('all'); // New state for user type filter
+  const [filterService, setFilterService] = useState('all'); // New state for service type filter
   const [filterDateRange, setFilterDateRange] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
@@ -85,12 +87,17 @@ const Bookings = () => {
     setSelectedBooking(null);
   };
 
+  // Get unique service types for the filter
+  const uniqueServices = [...new Set(bookings.map(booking => booking.service))];
+
   const filteredBookings = bookings.filter(booking => {
     const matchesSearch =
       booking.customer.toLowerCase().includes(searchTerm.toLowerCase()) ||
       booking.service.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesStatus = filterStatus === 'all' || booking.status === filterStatus;
+    const matchesUserType = filterUserType === 'all' || booking.userType === filterUserType; // Filter for user type
+    const matchesService = filterService === 'all' || booking.service === filterService; // Filter for service type
 
     const bookingDate = new Date(booking.date);
     const today = new Date();
@@ -111,7 +118,7 @@ const Bookings = () => {
       return true;
     })();
 
-    return matchesSearch && matchesStatus && matchesDateRange;
+    return matchesSearch && matchesStatus && matchesUserType && matchesService && matchesDateRange;
   });
 
   const totalPages = Math.ceil(filteredBookings.length / itemsPerPage);
@@ -153,6 +160,31 @@ const Bookings = () => {
               <option value="Pending">Pending</option>
               <option value="Completed">Completed</option>
               <option value="Cancelled">Cancelled</option>
+            </select>
+            {/* User Type Filter */}
+            <label htmlFor="userTypeFilter" className="ml-4 mr-2 text-gray-700">User Type:</label>
+            <select
+              id="userTypeFilter"
+              value={filterUserType}
+              onChange={(e) => setFilterUserType(e.target.value)}
+              className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            >
+              <option value="all">All User Types</option>
+              <option value="Registered">Registered</option>
+              <option value="Guest">Guest</option>
+            </select>
+            {/* Service Type Filter */}
+            <label htmlFor="serviceFilter" className="ml-4 mr-2 text-gray-700">Service:</label>
+            <select
+              id="serviceFilter"
+              value={filterService}
+              onChange={(e) => setFilterService(e.target.value)}
+              className="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+            >
+              <option value="all">All Services</option>
+              {uniqueServices.map(service => (
+                <option key={service} value={service}>{service}</option>
+              ))}
             </select>
             <label htmlFor="dateFilter" className="ml-4 mr-2 text-gray-700">Date:</label>
             <select

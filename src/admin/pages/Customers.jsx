@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import toast from 'react-hot-toast'; // Import toast from react-hot-toast
 import LoadingSpinner from '../components/LoadingSpinner'; // Import LoadingSpinner
 import { FiEdit, FiTrash2 } from 'react-icons/fi'; // Import icons
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Customers = () => {
   const [customers, setCustomers] = useState([]);
@@ -12,16 +13,16 @@ const Customers = () => {
       setIsLoading(true);
       await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
       setCustomers([
-        { id: 1, name: 'John Doe', email: 'john.doe@example.com', phone: '123-456-7890', totalBookings: 3 },
-        { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', phone: '098-765-4321', totalBookings: 5 },
-        { id: 3, name: 'Acme Corp', email: 'contact@acmecorp.com', phone: '555-123-4567', totalBookings: 10 },
-        { id: 4, name: 'Bob Johnson', email: 'bob.j@example.com', phone: '111-222-3333', totalBookings: 1 },
-        { id: 5, name: 'Global Solutions', email: 'info@globalsolutions.com', phone: '444-555-6666', totalBookings: 7 },
-        { id: 6, name: 'Alice Brown', email: 'alice.b@example.com', phone: '777-888-9999', totalBookings: 2 },
-        { id: 7, name: 'Tech Innovations', email: 'support@techinnovations.com', phone: '222-333-4444', totalBookings: 12 },
-        { id: 8, name: 'Charlie Davis', email: 'charlie.d@example.com', phone: '999-000-1111', totalBookings: 4 },
-        { id: 9, name: 'Future Enterprises', email: 'sales@futureent.com', phone: '333-444-5555', totalBookings: 8 },
-        { id: 10, name: 'Diana Miller', email: 'diana.m@example.com', phone: '666-777-8888', totalBookings: 6 },
+        { id: 1, name: 'John Doe', email: 'john.doe@example.com', phone: '123-456-7890', totalBookings: 3, lastServiceDate: '2023-10-20', organization: 'Global Solutions' },
+        { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', phone: '098-765-4321', totalBookings: 5, lastServiceDate: '2023-10-25', organization: null },
+        { id: 3, name: 'Acme Corp', email: 'contact@acmecorp.com', phone: '555-123-4567', totalBookings: 10, lastServiceDate: '2023-10-15', organization: 'Acme Corp' },
+        { id: 4, name: 'Bob Johnson', email: 'bob.j@example.com', phone: '111-222-3333', totalBookings: 1, lastServiceDate: '2023-11-01', organization: null },
+        { id: 5, name: 'Global Solutions', email: 'info@globalsolutions.com', phone: '444-555-6666', totalBookings: 7, lastServiceDate: '2023-10-18', organization: 'Global Solutions' },
+        { id: 6, name: 'Alice Brown', email: 'alice.b@example.com', phone: '777-888-9999', totalBookings: 2, lastServiceDate: '2023-10-22', organization: null },
+        { id: 7, name: 'Tech Innovations', email: 'support@techinnovations.com', phone: '222-333-4444', totalBookings: 12, lastServiceDate: '2023-10-10', organization: 'Tech Innovations' },
+        { id: 8, name: 'Charlie Davis', email: 'charlie.d@example.com', phone: '999-000-1111', totalBookings: 4, lastServiceDate: '2023-10-28', organization: null },
+        { id: 9, name: 'Future Enterprises', email: 'sales@futureent.com', phone: '333-444-5555', totalBookings: 8, lastServiceDate: '2023-10-05', organization: 'Future Enterprises' },
+        { id: 10, name: 'Diana Miller', email: 'diana.m@example.com', phone: '666-777-8888', totalBookings: 6, lastServiceDate: '2023-10-29', organization: null },
       ]);
       setIsLoading(false);
     };
@@ -29,7 +30,7 @@ const Customers = () => {
   }, []);
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [filterType, setFilterType] = useState('all'); // 'all', 'new', 'frequent'
+  const [filterType, setFilterType] = useState('all'); // 'all', 'new', 'frequent', 'organization'
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
 
@@ -86,6 +87,7 @@ const Customers = () => {
       if (filterType === 'all') return true;
       if (filterType === 'new') return customer.totalBookings === 1; // Example: "New" if 1 booking
       if (filterType === 'frequent') return customer.totalBookings >= 5; // Example: "Frequent" if 5 or more bookings
+      if (filterType === 'organization') return customer.organization !== null && customer.organization !== undefined; // Filter for customers associated with an organization
       return true;
     })();
 
@@ -98,6 +100,10 @@ const Customers = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
 
   return (
     <>
@@ -126,6 +132,7 @@ const Customers = () => {
               <option value="all">All Customers</option>
               <option value="new">New Customers</option>
               <option value="frequent">Frequent Bookers</option>
+              <option value="organization">By Organization</option> {/* Added Organization filter */}
             </select>
           </div>
           <button
@@ -150,23 +157,29 @@ const Customers = () => {
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Total Bookings</th>
+                    {/* New Columns */}
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last Service Date</th>
+                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Organization</th>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {currentCustomers.map((customer, index) => (
-                    <tr key={customer.id} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{customer.name}</td>
+                    <tr key={customer.id}>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                      <Link to={`/admin/customers/${customer.id}?userType=admin`} className="text-blue-600 hover:underline">
+                        {customer.name}
+                      </Link>
+                      </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{customer.email}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{customer.phone}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{customer.totalBookings}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{customer.lastServiceDate}</td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{customer.organization || 'N/A'}</td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <button onClick={() => handleViewEditCustomer(customer)} className="bg-primary text-dark hover:bg-yellow-400 transition mr-2">
-                          <FiEdit className="inline-block mr-1" />View / Edit
-                        </button>
-                        <button onClick={() => handleDeleteCustomer(customer.id)} className="bg-primary text-dark hover:bg-yellow-400 transition">
-                          <FiTrash2 className="inline-block mr-1" />Delete
-                        </button>
+                        {/* Add actions like Edit/Delete if needed */}
+                        <Link to={`/admin/customers/${customer.id}?userType=admin`} className="bg-primary text-dark hover:bg-yellow-400 transition px-3 py-1 rounded flex items-center gap-1">View Details</Link>
+                        <button onClick={() => handleDeleteCustomer(customer.id)} className="bg-red text-dark hover:bg-red-500 transition px-3 py-1 rounded flex items-center gap-1">Delete</button>
                       </td>
                     </tr>
                   ))}
@@ -236,6 +249,11 @@ const Customers = () => {
                     Phone: {editingCustomer?.phone}
                     <br />
                     Total Bookings: {editingCustomer?.totalBookings}
+                    {/* Display new fields in modal */}
+                    <br />
+                    Last Service Date: {editingCustomer?.lastServiceDate || 'N/A'}
+                    <br />
+                    Organization: {editingCustomer?.organization || 'N/A'}
                   </p>
                 </div>
               </div>

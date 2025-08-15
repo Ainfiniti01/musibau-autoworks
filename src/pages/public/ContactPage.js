@@ -15,9 +15,6 @@ const ContactPage = () => {
           <div data-aos="fade-up" className="mb-8">
             <BookingContactForm />
           </div>
-          <div data-aos="fade-up" data-aos-delay="100">
-            <WebsiteInquiryForm />
-          </div>
 
         <div className="contact-map-container py-10" data-aos="fade-up" data-aos-delay="200">
           <h3 className="text-3xl font-bold text-white mb-8 text-center md:text-left">Our Location</h3>
@@ -31,6 +28,10 @@ const ContactPage = () => {
             referrerPolicy="no-referrer-when-downgrade"
             className="rounded-lg shadow-lg">
           </iframe>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+          <WebsiteInquiryForm />
         </div>
       </div>
     </>

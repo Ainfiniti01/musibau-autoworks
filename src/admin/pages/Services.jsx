@@ -175,11 +175,11 @@ const Services = () => {
                         </span>
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                        <button onClick={() => handleEditService(service)} className="bg-primary text-dark hover:bg-yellow-400 transition mr-2">
-                          <FiEdit className="inline-block mr-1" />Edit
+                        <button onClick={() => handleEditProduct(product)} className="bg-yellow-500 hover:bg-yellow-600 text-white transition px-3 py-1 rounded flex items-center gap-1">
+                          <FiEdit /> Edit
                         </button>
-                        <button onClick={() => handleDeleteService(service.id)} className="bg-primary text-dark hover:bg-yellow-400 transition">
-                          <FiTrash2 className="inline-block mr-1" />Delete
+                        <button onClick={() => handleDeleteProduct(product.id)} className="bg-red-500 hover:bg-yellow-600 text-white transition px-3 py-1 rounded flex items-center gap-1">
+                          <FiTrash2 /> Delete
                         </button>
                       </td>
                     </tr>

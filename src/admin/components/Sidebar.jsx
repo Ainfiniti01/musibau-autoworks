@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FiHome, FiUsers, FiBox, FiSettings, FiLogOut, FiCalendar, FiTool } from 'react-icons/fi'; // Added FiCalendar and FiTool
+import { FiHome, FiUsers, FiBox, FiSettings, FiLogOut, FiCalendar, FiTool, FiChevronDown } from 'react-icons/fi'; // Added FiCalendar and FiTool
 
 const Sidebar = ({ isOpen, onLinkClick }) => {
+  const [customerMenuOpen, setCustomerMenuOpen] = useState(false);
   const navItems = [
     { name: 'Dashboard', path: '/admin/dashboard', icon: <FiHome /> },
     { name: 'Manage Bookings', path: '/admin/bookings', icon: <FiCalendar /> }, // Changed icon to FiCalendar
     { name: 'Manage Products', path: '/admin/products', icon: <FiBox /> },
     { name: 'Manage Services', path: '/admin/services', icon: <FiTool /> }, // Changed icon to FiTool
-    { name: 'Customers', path: '/admin/customers', icon: <FiUsers /> },
+    // { name: 'Customers', path: '/admin/customers', icon: <FiUsers /> }, // Removed Customers
+    { name: 'Booking History', path: '/admin/booking-history', icon: <FiCalendar /> },
+    { name: 'Service History', path: '/admin/service-history', icon: <FiTool /> },
+    // { name: 'Organizations', path: '/admin/organizations', icon: <FiUsers /> },
     { name: 'Settings', path: '/admin/settings', icon: <FiSettings /> }, // Added Settings
   ];
 
-return (
-    <aside className={`bg-[#004040] text-white transition-all duration-300 w-64 fixed md:relative z-20 h-full ${isOpen ? 'block' : 'hidden'} md:block`}>
+  return (
+    <> {/* Use a fragment to wrap both aside and backdrop */}
       <div className="flex items-center justify-between px-4 py-3">
         <h1 className={`text-[#ECBE07] font-bold text-lg transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>Admin</h1>
         {/* The hamburger menu button will be moved to the Header component for mobile */}
@@ -35,6 +39,24 @@ return (
             {item.icon} {isOpen && item.name}
           </NavLink>
         ))}
+        {/* Customers Dropdown */}
+        <div
+          onClick={() => setCustomerMenuOpen(!customerMenuOpen)}
+          className="{`font-bold text-lg transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`} flex items-center justify-between cursor-pointer px-4 py-2 hover:bg-gray-200 hover:bg-yellow-400 hover:text-dark transition"
+        >
+          <span className="flex items-center gap-3" >
+            <FiUsers />
+            {isOpen && 'Customers'}
+          </span>
+          <FiChevronDown className={`${customerMenuOpen ? 'rotate-180' : ''} transition`} />
+        </div>
+        {customerMenuOpen && (
+          <div className="ml-8 mt-2 space-y-2 text-sm">
+            <NavLink to="/admin/customers/Individual" className="block hover:text-yellow-500" onClick={onLinkClick}>Individual</NavLink>
+            {/* <NavLink to="/admin/customers/organization" className="block hover:text-yellow-500" onClick={onLinkClick}>Organization</NavLink> */}
+            <NavLink to="/admin/organizations" className="block hover:text-yellow-500" onClick={onLinkClick}>Organizations</NavLink>
+          </div>
+        )}
         <NavLink
           to="/admin/login" // Changed to login for consistency with logout action in Header
           title="Logout"
@@ -44,7 +66,7 @@ return (
           <FiLogOut /> {isOpen && 'Logout'}
         </NavLink>
       </nav>
-    </aside>
+    </>
   );
 };
 

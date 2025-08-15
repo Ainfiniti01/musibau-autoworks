@@ -1,10 +1,12 @@
 import React from 'react';
 
+// Import images
+
+const aboutImage = require('../assets/images/logo.png');
+
 const AboutSection = () => {
   return (
-    <section className="relative py-16 bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/Autoshop_files/servicebg3_mryd4r.webp')" }}>
-      {/* Hexagon background pattern overlay */}
-      <div className="absolute inset-0 bg-repeat opacity-20" style={{ backgroundImage: "url('/assets/images/Autoshop_files/vt')" }}></div> {/* Assuming 'vt' is a path to a hexagon pattern */}
+    <section>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row items-center gap-12">
@@ -38,7 +40,7 @@ const AboutSection = () => {
           {/* Image Column */}
           <div className="md:w-1/2" data-aos="fade-left">
             <img
-              src="/assets/images/Autoshop_files/logomain_m1fbeg.jpg" // Example image path
+              src={aboutImage} // Use imported image
               alt="Musibau Autoworks"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />

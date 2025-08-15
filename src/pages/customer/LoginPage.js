@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import ToastPlaceholder from '../../components/ToastPlaceholder';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import { getGuestActivities, clearGuestActivities } from '../../utils/guestActivity'; // Import guest activity utilities
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const [toast, setToast] = useState({ message: '', type: '' });
@@ -40,8 +41,17 @@ const LoginPage = () => {
         // to attach it to the newly logged-in user.
         clearGuestActivities(); // Corrected function name
       }
+      // Determine user type (simulated for now)
+      // In a real app, this would come from the login API response
+      // For demonstration, we'll simulate a user type.
+      const userType = data.email.includes('org') ? 'organization' : 'customer'; // Simple simulation
+
       setTimeout(() => {
-        navigate('/customer/dashboard'); // Redirect to customer dashboard
+        if (userType === 'organization') {
+          navigate('/organization/dashboard');
+        } else {
+          navigate('/customer/dashboard');
+        }
       }, 1500); // Delay redirect to show toast message
     }
   };
@@ -97,9 +107,9 @@ const LoginPage = () => {
               </label>
             </div>
             <div className="text-sm">
-              <a href="/forgot-password" className="font-medium text-[#ECBE07] hover:text-[#d4a806]">
+              <Link to="/forgot-password" className="font-medium text-[#ECBE07] hover:text-[#d4a806]">
                 Forgot your password?
-              </a>
+              </Link>
             </div>
           </div>
 

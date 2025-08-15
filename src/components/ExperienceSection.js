@@ -1,5 +1,5 @@
 import React from 'react';
-
+const General_Maintenance = require('../assets/images/General_Maintenance.jpg');
 const ExperienceSection = () => {
   return (
     <section className="py-16 bg-gray-900">
@@ -24,7 +24,7 @@ const ExperienceSection = () => {
           {/* Image Column */}
           <div className="md:w-1/2" data-aos="fade-left">
             <img
-              src="/assets/images/General_Maintenance.jpg" // Example image path
+              src={General_Maintenance} // Use imported image
               alt="Mechanic working on a car"
               className="rounded-lg shadow-lg w-full h-auto object-cover"
             />

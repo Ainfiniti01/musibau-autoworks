@@ -87,12 +87,12 @@ const BookingContactForm = ({ isDashboard = false }) => {
   };
 
   const serviceOptions = [
+    'Other',
     'Engine Repair',
     'Painting',
     'Tire Rotation',
     'Brake Service',
     'Oil Change',
-    'Other',
   ];
 
   const isMessageAutofilled = formData.message.startsWith('Request: ');
