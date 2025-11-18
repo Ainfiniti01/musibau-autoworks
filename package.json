@@ -7,6 +7,7 @@
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@headlessui/react": "^2.2.7",
     "@heroicons/react": "^2.2.0",
+    "aos": "^2.3.4",
     "core-js": "^3.45.1",
     "framer-motion": "^12.23.22",
     "lodash": "^4.17.21",
@@ -46,6 +47,7 @@
   },
   "proxy": "http://localhost:3000/musibau-autoworks/api",
   "devDependencies": {
+    "@types/aos": "^3.0.7",
     "gh-pages": "^6.3.0"
   }
 }

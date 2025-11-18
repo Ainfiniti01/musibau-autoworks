@@ -176,40 +176,7 @@ const Navbar = () => {
           <NavLink to="/products" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Products</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Contact</NavLink>
 
-          {/* Account Section - Desktop */}
-          <div className="relative" ref={desktopAccountDropdownRef}>
-            <button onClick={toggleDesktopAccountDropdown} className="text-yellow-400 hover:underline font-bold flex items-center">
-              {isAuthenticated ? user?.name || 'Account' : 'Account'}
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </button>
-            {isDesktopAccountDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 transition-all duration-300 ease-in-out" >
-                {isAuthenticated ? (
-                  <>
-                    <NavLink to="/customer/dashboard" className={({ isActive }) => isActive ? "active-link block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" : "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"} onClick={() => setIsDesktopAccountDropdownOpen(false)}>Dashboard</NavLink>
-                    <button onClick={handleLogout} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Logout</button>
-                  </>
-                ) : (
-                  <>
-                    <NavLink to="/register" className={({ isActive }) => isActive ? "active-link block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" : "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"} onClick={() => setIsDesktopAccountDropdownOpen(false)}>Register</NavLink>
-                    <NavLink to="/login" className={({ isActive }) => isActive ? "active-link block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" : "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"} onClick={() => setIsDesktopAccountDropdownOpen(false)}>Login</NavLink>
-                    
-                    {/* <div className="relative" ref={desktopRegisterDropdownRef}>
-                      <button onClick={toggleDesktopRegisterDropdown} className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center justify-between">
-                        Register
-                        <svg className={`w-4 h-4 ml-1 transform transition-transform duration-300 ${isDesktopRegisterDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                      </button>
-                      
-                    </div> */}
-                  </>
-                )}
-              </div>
-            )}
-          </div>
+          
         </div>
       </div>
 
@@ -235,27 +202,6 @@ const Navbar = () => {
             <NavLink to="/products" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Products</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Contact</NavLink>
 
-            {/* Account Section - Mobile (inside sidebar) */}
-            <li className="relative" ref={mobileAccountDropdownRef}>
-              <button onClick={toggleMobileAccountDropdown} className="block w-full text-left text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans flex items-center justify-between">
-                {isAuthenticated ? user?.name || 'Account' : 'Account'} <span>▾</span>
-              </button>
-              {isMobileAccountDropdownOpen && (
-                <ul className="submenu">
-                  {isAuthenticated ? (
-                    <>
-                      <li><NavLink to="/customer/profile" className={({ isActive }) => isActive ? "active-link block text-sm text-white hover:bg-gray-700" : "block text-sm text-white hover:bg-gray-700"} onClick={toggleMobileMenu}>Profile</NavLink></li>
-                      <li><button onClick={handleLogout} className="block w-full text-left text-sm text-white hover:bg-gray-700">Logout</button></li>
-                    </>
-                  ) : (
-                    <>
-                      <li><NavLink to="/register" className={({ isActive }) => isActive ? "active-link block text-sm text-white hover:bg-gray-700" : "block text-sm text-white hover:bg-gray-700"} onClick={toggleMobileMenu}>Register</NavLink></li>
-                      <li><NavLink to="/login" className={({ isActive }) => isActive ? "active-link block text-sm text-white hover:bg-gray-700" : "block text-sm text-white hover:bg-gray-700"} onClick={toggleMobileMenu}>Login</NavLink></li>
-                    </>
-                  )}
-                </ul>
-              )}
-            </li>
           </div>
         </div>
       </div> {/* Closing div for the main container of the mobile menu sidebar */}

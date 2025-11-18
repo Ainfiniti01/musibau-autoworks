@@ -13,14 +13,14 @@ const aboutImage = require('../assets/images/logo.png');
           {/* Logo and Contact Info */}
           <div className="text-center md:text-left mb-8 md:mb-0">
          {/* Image Column */}
-          <div className="w-full flex justify-center mb-4 ">
+          {/* <div className="w-full flex justify-center mb-4 ">
             <img
               src={aboutImage}
               alt="Musibau Autoworks"
               className="mx-auto w-24 rounded-sm object-contain drop-shadow-lg"
             />
-          </div> 
-            {/* <img src="" alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" /> */}
+          </div>  */}
+            <img src={aboutImage} alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" />
             <p className="font-opensans">123 Automotive Lane, Car City, CA 90210</p>
             <p className="font-opensans">Phone: (123) 456-7890</p>
             <p className="font-opensans">Email: info@musibauautoworks.com</p>
