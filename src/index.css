@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below image */
+}
+
+/* Active Link Styling */
+.active-link {
+  color: #FFD700;
+  font-weight: bold;
+  border-left: 3px solid #FFD700;
+  padding-left: 12px;
+}
+
+/* Submenu for mobile dropdown */
+.submenu {
+  background: #111;
+  padding: 8px 12px;
+  border-left: 2px solid #FFD700;
+}
+.submenu li {
+  padding: 6px 0;
+}
+
+/* Sidebar styles */
+.fixed.top-0.left-0.h-full.w-3\/4.max-w-xs.bg-gray-800.z-50.transform.transition-transform.duration-300.ease-in-out.md\:hidden {
+  width: 75%;         /* instead of 100% */
+  max-width: 280px;   /* cap it for large phones */
+  background: #0B1A2A; /* consistent dark blue/black */
+}
+
+/* Overlay for sidebar */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+/* Sidebar list item spacing */
+.sidebar li {
+  padding: 14px 20px;  /* more breathing room */
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Sidebar close button positioning */
+.sidebar .close-btn {
+  position: absolute;
+  right: 16px; 
+  top: 16px;
+  font-size: 20px;
+}

@@ -1,0 +1,33 @@
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Or adjust as needed */
+  text-align: center;
+}
+
+.spinner svg {
+  width: 80px;
+  height: 80px;
+  color: var(--color-gold); /* Use gold color from variables */
+  animation: car-spin 2s linear infinite;
+}
+
+@keyframes car-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
