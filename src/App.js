@@ -39,7 +39,7 @@ function App() {
   return (
     <Router>
       <RouteChangeTracker />
-      <Suspense fallback={<LoadingSpinner />}>
+      <Suspense fallback={<LoadingSpinner/>}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<ErrorBoundary><PublicLayout><HomePage /></PublicLayout></ErrorBoundary>} />
