@@ -5,7 +5,7 @@
 - Replace dummy API URLs in form submission handlers with real endpoints.
 - Insert your Google Analytics Measurement ID in `src/index.js`.
 - Add real images replacing placeholders in `src/assets/images/`.
-- Review and test all forms with live backend services.
+- Review and test all forms with live backend services. all done
 - Update any TODO comments
 
 
