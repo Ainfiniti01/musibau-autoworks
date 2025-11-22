@@ -3,98 +3,15 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isDesktopAccountDropdownOpen, setIsDesktopAccountDropdownOpen] = useState(false);
-  const [isDesktopRegisterDropdownOpen, setIsDesktopRegisterDropdownOpen] = useState(false); // New state for desktop register dropdown
-  const [isMobileAccountDropdownOpen, setIsMobileAccountDropdownOpen] = useState(false);
-  const [isMobileRegisterDropdownOpen, setIsMobileRegisterDropdownOpen] = useState(false);
-  // Placeholder for authentication state. In a real app, this would come from context or a global state.
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null); // To store user info if authenticated
 
   const logo = require('../assets/images/logo.png');
 
-  // Simulate checking authentication status on component mount
-  useEffect(() => {
-    // In a real app, you'd check localStorage, cookies, or an auth context
-    const storedUser = localStorage.getItem('user');
-    if (storedUser) {
-      setUser(JSON.parse(storedUser));
-      setIsAuthenticated(true);
-    }
-  }, []);
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
-    // Close account dropdowns when mobile menu is opened
-    setIsMobileAccountDropdownOpen(false);
-    setIsMobileRegisterDropdownOpen(false);
-    setIsDesktopAccountDropdownOpen(false); // Also close desktop dropdown if it somehow gets opened
-  };
-
-  const toggleDesktopAccountDropdown = () => {
-    setIsDesktopAccountDropdownOpen(!isDesktopAccountDropdownOpen);
-    setIsDesktopRegisterDropdownOpen(false); // Close nested register dropdown when main account dropdown is toggled
-  };
-
-  const toggleDesktopRegisterDropdown = () => {
-    setIsDesktopRegisterDropdownOpen(!isDesktopRegisterDropdownOpen);
-  };
-
-  const toggleMobileAccountDropdown = () => {
-    setIsMobileAccountDropdownOpen(!isMobileAccountDropdownOpen);
-    // Ensure nested dropdown is closed when main mobile account dropdown is toggled
-    setIsMobileRegisterDropdownOpen(false);
-  };
-
-  const toggleMobileRegisterDropdown = () => {
-    setIsMobileRegisterDropdownOpen(!isMobileRegisterDropdownOpen);
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('user');
-    setIsAuthenticated(false);
-    setUser(null);
-    setIsDesktopAccountDropdownOpen(false); // Close desktop dropdown on logout
-    setIsDesktopRegisterDropdownOpen(false); // Close desktop register dropdown on logout
-    setIsMobileAccountDropdownOpen(false); // Close mobile dropdown on logout
-    setIsMobileRegisterDropdownOpen(false); // Close nested mobile dropdown on logout
-    // Optionally redirect to login or home page
-    // navigate('/login');
   };
 
   // Refs for closing dropdowns on outside click
-  const desktopAccountDropdownRef = useRef(null);
-  const desktopRegisterDropdownRef = useRef(null); // New ref for desktop register dropdown
   const mobileMenuSidebarRef = useRef(null); // Ref for the entire mobile menu sidebar
-  const mobileAccountDropdownRef = useRef(null); // Ref for the mobile account dropdown
-  const mobileRegisterDropdownRef = useRef(null);
-
-  // Effect to close desktop account dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (desktopAccountDropdownRef.current && !desktopAccountDropdownRef.current.contains(event.target)) {
-        setIsDesktopAccountDropdownOpen(false);
-        setIsDesktopRegisterDropdownOpen(false); // Also close nested register dropdown
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isDesktopAccountDropdownOpen]); // Re-run effect if dropdown state changes
-
-  // Effect to close desktop register dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (desktopRegisterDropdownRef.current && !desktopRegisterDropdownRef.current.contains(event.target)) {
-        setIsDesktopRegisterDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isDesktopRegisterDropdownOpen]); // Re-run effect if dropdown state changes
 
   // Effect to close mobile menu sidebar on outside click
   useEffect(() => {
@@ -108,32 +25,6 @@ const Navbar = () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isMobileMenuOpen]); // Re-run effect if sidebar state changes
-
-  // Effect to close mobile account dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (mobileAccountDropdownRef.current && !mobileAccountDropdownRef.current.contains(event.target)) {
-        setIsMobileAccountDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isMobileAccountDropdownOpen]); // Re-run effect if dropdown state changes
-
-  // Effect to close mobile register dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (mobileRegisterDropdownRef.current && !mobileRegisterDropdownRef.current.contains(event.target)) {
-        setIsMobileRegisterDropdownOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [isMobileRegisterDropdownOpen]); // Re-run effect if dropdown state changes
 
 
   return (

@@ -3,7 +3,6 @@ import React, { createContext, useState } from 'react';
 const AppContext = createContext();
 
 const AppProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
   const [theme, setTheme] = useState('light');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -12,8 +11,6 @@ const AppProvider = ({ children }) => {
   };
 
   const value = {
-    user,
-    setUser,
     theme,
     toggleTheme,
     isLoading,

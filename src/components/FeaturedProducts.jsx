@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { formatCurrency } from '../utils/formatCurrency';
+
 
 const FeaturedProducts = () => {
   // Initialize AOS on component mount

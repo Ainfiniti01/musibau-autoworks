@@ -15,14 +15,12 @@ import LoadingSpinner from './components/LoadingSpinner';
 // Page Components using React.lazy
 const HomePage = lazy(() => import('./pages/public/HomePage'));
 const ServicesPage = lazy(() => import('./pages/public/ServicesPage'));
-const IndividualServicePage = lazy(() => import('./pages/public/IndividualServicePage'));
 const BookingPage = lazy(() => import('./pages/public/BookingPage'));
 const ProductsPage = lazy(() => import('./pages/public/ProductsPage'));
 const ContactPage = lazy(() => import('./pages/public/ContactPage'));
 const GalleryPage = lazy(() => import('./pages/public/GalleryPage'));
 const AboutPage = lazy(() => import('./pages/public/AboutPage'));
 const NotFoundPage = lazy(() => import('./pages/public/NotFoundPage'));
-const GuestBookingPage = lazy(() => import('./pages/public/GuestBookingPage'));
 
 
 function App() {
@@ -34,8 +32,6 @@ function App() {
     });
   }, []);
 
-  const isGitHub = window.location.hostname.includes("github.io");
-
   return (
     <Router>
       <RouteChangeTracker />
@@ -44,13 +40,11 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<ErrorBoundary><PublicLayout><HomePage /></PublicLayout></ErrorBoundary>} />
           <Route path="/services" element={<ErrorBoundary><PublicLayout><ServicesPage /></PublicLayout></ErrorBoundary>} />
-          <Route path="/services/:serviceId" element={<ErrorBoundary><PublicLayout><IndividualServicePage /></PublicLayout></ErrorBoundary>} />
           <Route path="/booking" element={<ErrorBoundary><PublicLayout><BookingPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/products" element={<ErrorBoundary><PublicLayout><ProductsPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/contact" element={<ErrorBoundary><PublicLayout><ContactPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/gallery" element={<ErrorBoundary><PublicLayout><GalleryPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/about" element={<ErrorBoundary><PublicLayout><AboutPage /></PublicLayout></ErrorBoundary>} />
-          <Route path="/guest-booking" element={<ErrorBoundary><PublicLayout><GuestBookingPage /></PublicLayout></ErrorBoundary>} />
 
           
 
