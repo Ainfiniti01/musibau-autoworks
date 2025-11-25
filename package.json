@@ -29,9 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
@@ -46,7 +44,6 @@
     ]
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "gh-pages": "^6.3.0"
+    "@types/aos": "^3.0.7"
   }
 }
