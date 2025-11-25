@@ -11,6 +11,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { ToastContainer } from 'react-toastify'; // Import ToastContainer
 import 'react-toastify/dist/ReactToastify.css'; // Import toastify CSS
 import LoadingSpinner from './components/LoadingSpinner';
+import { Analytics } from "@vercel/analytics/react";
 
 // Page Components using React.lazy
 const HomePage = lazy(() => import('./pages/public/HomePage'));
@@ -54,6 +55,7 @@ function App() {
       </Suspense>
       <ScrollToTopButton />
       <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover />
+      <Analytics />
     </Router>
   );
 }
