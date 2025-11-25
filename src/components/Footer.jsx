@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'; // Example social icons
 
 const Footer = () => {
-const socialIconClasses = "text-gray-400 hover:text-[#ECBE07] transition duration-300 text-2xl mx-2";
+const socialIconClasses = "text-gray-400 hover:text-yellow-300 transition duration-300 text-2xl mx-2";
 const aboutImage = require('../assets/images/logo.png');
 
   return (
@@ -20,10 +20,10 @@ const aboutImage = require('../assets/images/logo.png');
               className="mx-auto w-24 rounded-sm object-contain drop-shadow-lg"
             />
           </div>  */}
-            <img src={aboutImage} alt="Musibau Autoworks Logo" className="h-16 mx-auto md:mx-0 mb-4" loading="lazy" />
-            <p className="font-opensans">123 Automotive Lane, Car City, CA 90210</p>
-            <p className="font-opensans">Phone: (123) 456-7890</p>
-            <p className="font-opensans">Email: info@musibauautoworks.com</p>
+            <img src={aboutImage} alt="Musibau Autoworks Logo" className="h-10 mx-auto md:mx-0 mb-2" loading="lazy" />
+            <p className="font-opensans text-sm">123 Automotive Lane, Car City, CA 90210</p>
+            <p className="font-opensans text-sm">Phone: (123) 456-7890</p>
+            <p className="font-opensans text-sm">Email: info@musibauautoworks.com</p>
           </div>
 
           {/* Quick Links and Services - Two Column for Mobile */}
@@ -31,19 +31,19 @@ const aboutImage = require('../assets/images/logo.png');
             <div className="text-center mb-8 md:mb-0">
               <h4 className="text-xl font-bold mb-4 text-white font-montserrat">Quick Links</h4>
               <ul className="font-opensans">
-                <li className="mb-2"><Link to="/" className="hover:text-[#ECBE07] transition duration-300">Home</Link></li>
-                <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Services</Link></li>
-                <li className="mb-2"><Link to="/about" className="hover:text-[#ECBE07] transition duration-300">About Us</Link></li>
-                <li><Link to="/contact" className="hover:text-[#ECBE07] transition duration-300">Contact</Link></li>
+                <li className="mb-2"><Link to="/" className="hover:text-yellow-300 transition duration-300">Home</Link></li>
+                <li className="mb-2"><Link to="/services" className="hover:text-yellow-300 transition duration-300">Services</Link></li>
+                <li className="mb-2"><Link to="/about" className="hover:text-yellow-300 transition duration-300">About Us</Link></li>
+                <li><Link to="/contact" className="hover:text-yellow-300 transition duration-300">Contact</Link></li>
               </ul>
             </div>
             <div className="text-center mb-8 md:mb-0">
               <h4 className="text-xl font-bold mb-4 text-white font-montserrat">Services</h4>
               <ul className="font-opensans">
-                <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Chassis Repair</Link></li>
-                <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Engine Overhaul</Link></li>
-                <li className="mb-2"><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">Electrical Diagnostics</Link></li>
-                <li><Link to="/services" className="hover:text-[#ECBE07] transition duration-300">General Maintenace</Link></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-yellow-300 transition duration-300">Chassis Repair</Link></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-yellow-300 transition duration-300">Engine Overhaul</Link></li>
+              <li className="mb-2"><Link to="/services" className="hover:text-yellow-300 transition duration-300">Electrical Diagnostics</Link></li>
+              <li><Link to="/services" className="hover:text-yellow-300 transition duration-300">General Maintenace</Link></li>
               </ul>
             </div>
           </div>
