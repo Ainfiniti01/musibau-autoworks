@@ -63,7 +63,7 @@ const Navbar = () => {
           <NavLink to="/" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Home</NavLink>
           <NavLink to="/services" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Services</NavLink>
           <NavLink to="/gallery" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Gallery</NavLink>
-          <NavLink to="/booking" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Booking</NavLink>
+          {/* <NavLink to="/booking" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Booking</NavLink> */}
           <NavLink to="/products" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Products</NavLink>
           <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link" : "text-white hover:text-yellow-400 transition duration-300 font-opensans"}>Contact</NavLink>
 
@@ -89,7 +89,7 @@ const Navbar = () => {
             <NavLink to="/" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Home</NavLink>
             <NavLink to="/services" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Services</NavLink>
             <NavLink to="/gallery" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Gallery</NavLink>
-            <NavLink to="/booking" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Booking</NavLink>
+            {/* <NavLink to="/booking" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Booking</NavLink> */}
             <NavLink to="/products" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Products</NavLink>
             <NavLink to="/contact" className={({ isActive }) => isActive ? "active-link block py-2 hover:text-yellow-400 transition duration-300 font-opensans" : "block text-white py-2 hover:text-yellow-400 transition duration-300 font-opensans"} onClick={toggleMobileMenu}>Contact</NavLink>
 

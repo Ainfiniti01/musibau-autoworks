@@ -79,9 +79,10 @@ const BookingContactForm = () => {
   const isMessageAutofilled = formData.message.startsWith('Request: ');
 
   return (
-    <div className="bg-[#0B0D1F] py-10 px-6 md:px-20">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center text-white mb-8 py-10">Book Your Service or Contact Us</h2>
+    <div className="bg-[#0B0D1F] py-16 px-6 md:px-10">
+      <div className="container ">
+        <h2 className="text-3xl font-bold text-center text-white mb-3">Book Your Service or Contact Us</h2>
+        <p className='text-yellow-500 text-center'>Use this form to contact or Book an appointment</p>
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Full Name */}
           <div className="flex flex-col">

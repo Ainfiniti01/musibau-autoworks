@@ -17,7 +17,7 @@ export default function HeroSection() {
       subtext:
         "Trusted automobile repair & maintenance services with decades of experience. Your car is in safe hands.",
       ctaText: "Book a Service",
-      ctaLink: "/booking#/booking",
+      ctaLink: "/contact#/contact",
       textPosition: "left",
       accentColor: "yellow",
       seoKeywords:
@@ -33,7 +33,7 @@ export default function HeroSection() {
       subtext:
         "From oil changes to full servicing, we ensure smooth and safe rides every time.",
       ctaText: "Book Maintenance",
-      ctaLink: "/service#/services",
+      ctaLink: "/contact#/contact",
       textPosition: "left",
       accentColor: "yellow",
       seoKeywords:
@@ -49,7 +49,7 @@ export default function HeroSection() {
       subtext:
         "Expert air conditioning repair and gas refills to keep your drives comfortable.",
       ctaText: "Fix AC",
-      ctaLink: "/service#/services",
+      ctaLink: "/contact#/contact",
       textPosition: "right",
       accentColor: "blue",
       seoKeywords:
@@ -65,7 +65,7 @@ export default function HeroSection() {
       subtext:
         "Stuck on the road? Our emergency towing and rescue team has your back anytime, anywhere.",
       ctaText: "Get Help Now",
-      ctaLink: "/towing",
+      ctaLink: "/contact#/contact",
       textPosition: "center",
       accentColor: "red",
       seoKeywords:
@@ -81,7 +81,7 @@ export default function HeroSection() {
       subtext:
         "Professional auto painting with precision and durable finishes to restore beauty.",
       ctaText: "Paint My Car",
-      ctaLink: "/painting",
+      ctaLink: "/contact#/contact",
       textPosition: "left",
       accentColor: "green",
       seoKeywords:
@@ -97,7 +97,7 @@ export default function HeroSection() {
       subtext:
         "Expert panel beating and body repairs to fix dents, crashes, and restore shape.",
       ctaText: "Fix Bodywork",
-      ctaLink: "/panel-beating",
+      ctaLink: "/contact#/contact",
       textPosition: "right",
       accentColor: "amber",
       seoKeywords:
@@ -113,7 +113,7 @@ export default function HeroSection() {
       subtext:
         "From rewiring to advanced electrical diagnostics, we keep your car powered up.",
       ctaText: "Check Electricals",
-      ctaLink: "/electrical",
+      ctaLink: "/contact#/contact",
       textPosition: "center",
       accentColor: "purple",
       seoKeywords:
