@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ainfiniti01.github.io/musibau-autoworks",
+
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.1.0",
     "@headlessui/react": "^2.2.7",
