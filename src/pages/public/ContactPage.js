@@ -77,7 +77,7 @@ const ContactPage = () => {
           <div className="contact-map-container">
             <h3 className="text-2xl font-bold text-white mb-6">Our Location</h3>
             <iframe
-              src="https://www.google.com/maps/place/Makoko,+Lagos+101245,+Lagos/@0.8247176,88.7610255,3z/data=!4m6!3m5!1s0x103b8c8da642e481:0x42d33769d3ebadba!8m2!3d6.4990277!4d3.3880288!16s%2Fm%2F07s53sm?entry=ttu&g_ep=EgoyMDI1MTEyMy4xIKXMDSoASAFQAw%3D%3D"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65362411.61190957!2d88.7610255!3d0.8247176!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c8da642e481%3A0x42d33769d3ebadba!2sMakoko%2C%20Lagos%20101245%2C%20Lagos!5e0!3m2!1sen!2sng!4v1764278513935!5m2!1sen!2sng"
               width="100%"
               height="450"
               style={{ border: 0 }}
