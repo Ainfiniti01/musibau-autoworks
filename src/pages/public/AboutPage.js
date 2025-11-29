@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SectionWrapper from '../../components/SectionWrapper'; // Assuming SectionWrapper is a common layout component
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'; // Example icons for testimonials
 const aboutImage = require('../../assets/images/logo.png');
@@ -15,25 +15,191 @@ const AboutPage = () => {
       <div className="container mx-auto px-4 pt-20">
         <h1 className="text-4xl font-bold text-center mb-8 py-11">About Us</h1>
 
-        <div className="grid md:grid-cols-2 items-center">
-          {/* Image Column */}
-          <div className="md:w-1/2" data-aos="fade-left">
-            <img
-              src={aboutImage} // Use imported image
-              alt="Musibau Autoworks"
-              className="rounded-lg shadow-lg w-full h-auto object-cover"
+        {/* Our Story Section with Image */}
+        <div className="grid md:grid-cols-2 items-center gap-10 py-10">
+          {/* Image Column with custom styling */}
+          <div className="relative md:w-full flex justify-center items-center" data-aos="fade-left">
+            <div className="relative w-[300px] h-[450px] md:w-[400px] md:h-[550px] rounded-lg shadow-xl overflow-hidden
+                        transform -rotate-3 hover:rotate-0 transition-transform duration-500 ease-in-out
+                        bg-gradient-to-br from-yellow-500 to-black p-1"> {/* This provides the slanted card effect */}
+              <img
+                src={aboutImage} // Use imported image, assuming it's appropriate
+                alt="Musibau Autoworks Founder"
+                className="w-full h-full object-cover rounded-lg"
+              />
+              {/* Text Overlays for the image */}
+              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 text-white p-3">
+                <p className="font-bold text-lg">Engineer Abdulazeez Musibau</p>
+                <p className="text-sm">Founder & Lead Technician</p>
+              </div>
+              <span className="absolute top-5 right-5 bg-yellow-500 text-black text-xs font-bold px-3 py-1 rounded-full">Est. 2010</span>
+            </div>
+          </div>
+
+          {/* Our Story Text Column */}
+          <div data-aos="fade-right">
+            <h2 className="text-3xl font-semibold mb-4 text-white">Our Story</h2>
+            <ReadMoreLess
+              text={`At Musibau Autoworks, we believe that your vehicle deserves more than just repairs — it deserves care, expertise, and honesty. What began as a small workshop in Makoko, Sabo-Yaba, grew from a simple dream into a trusted name in automotive service across Lagos.
+
+              Founded by Engineer Abdulazeez Musibau, our journey started with a passion for cars and a commitment to doing things differently: no hidden charges, no shortcuts — just reliable, high-quality service every time. We understand that your car is more than just a vehicle; it’s a part of your life. That’s why we treat every service with precision, dedication, and respect.
+
+              Over the years, Musibau Autoworks has grown to offer a full range of services — from routine maintenance and diagnostics to engine overhauls, chassis repairs, electrical work, and even home service support. Our team combines modern tools with hands-on expertise to ensure your car is safe, efficient, and running at its best.
+
+              But what truly drives us is our customers. Your trust fuels our growth, your satisfaction is our priority, and your peace of mind is our mission. Whether it’s a simple oil change or a complex repair, Musibau Autoworks is here to make sure you get back on the road safely, quickly, and confidently.
+
+              We are proud of how far we’ve come, but our vision is even bigger: to become Nigeria’s most trusted and customer-focused automobile workshop. From your daily drive to your prized vehicle, we’ve got you covered.`}
+              maxLength={300}
             />
           </div>
-          <div data-aos="fade-left">
-            <h2 className="text-3xl font-semibold mb-4">Our Story</h2>
-            <p className="text-lg mb-4">
-              Musibau AutoWorks was founded with a passion for automotive excellence and a commitment to customer satisfaction. We believe in providing honest, reliable, and high-quality services to keep your vehicle running smoothly.
-            </p>
-            <p className="text-lg">
-              Our team of experienced technicians is dedicated to using the latest diagnostic tools and techniques to ensure your car receives the best possible care. From routine maintenance to complex repairs, we've got you covered.
-            </p>
+        </div>
+
+        {/* Our Journey Section */}
+        <div className="mt-20 py-10">
+          <h2 className="text-4xl font-bold text-center mb-4 text-white">Our Journey</h2>
+          <p className="text-lg text-center mb-12 text-gray-300">
+            Key milestones that have shaped Musibau Autoworks and our vision over the years.
+          </p>
+
+          <div className="relative max-w-4xl mx-auto">
+            {/* Vertical line */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-yellow-500 h-full"></div>
+
+            {/* Timeline Items */}
+            {/* Milestone 1: The Beginning */}
+            <div className="flex items-center w-full mb-8">
+              <div className="w-1/2 pr-8 flex justify-end">
+                <div className="text-right" data-aos="fade-right">
+                  <h3 className="text-xl font-bold text-white">2010 – The Beginning</h3>
+                  <p className="text-gray-300">
+                    Musibau Autoworks opened its doors as a small workshop with a simple mission: to provide honest, reliable, and high-quality automotive services.
+                  </p>
+                </div>
+              </div>
+              <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
+              <div className="w-1/2 pl-8"></div>
+            </div>
+
+            {/* Milestone 2: Growth and Expansion */}
+            <div className="flex items-center w-full mb-8">
+              <div className="w-1/2 pr-8"></div>
+              <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
+              <div className="w-1/2 pl-8 flex justify-start">
+                <div className="text-left" data-aos="fade-left">
+                  <h3 className="text-xl font-bold text-white">2015 – Expansion of Services</h3>
+                  <p className="text-gray-300">
+                    We broadened our offerings to include comprehensive services such as engine overhauls, electrical repairs, and specialized diagnostics, meeting more of our customers’ automotive needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Milestone 3: Technology Integration */}
+            <div className="flex items-center w-full mb-8">
+              <div className="w-1/2 pr-8 flex justify-end">
+                <div className="text-right" data-aos="fade-right">
+                  <h3 className="text-xl font-bold text-white">2020 – Modernization</h3>
+                  <p className="text-gray-300">
+                    We integrated state-of-the-art diagnostic tools and modern repair techniques, improving efficiency, precision, and overall service quality.
+                  </p>
+                </div>
+              </div>
+              <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
+              <div className="w-1/2 pl-8"></div>
+            </div>
+
+            {/* Milestone 4: Community Trust */}
+            <div className="flex items-center w-full mb-8">
+              <div className="w-1/2 pr-8"></div>
+              <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
+              <div className="w-1/2 pl-8 flex justify-start">
+                <div className="text-left" data-aos="fade-left">
+                  <h3 className="text-xl font-bold text-white">2023 – Building Trust</h3>
+                  <p className="text-gray-300">
+                    Our dedication to professionalism and customer satisfaction earned us recognition as a leading automotive service provider in Lagos, built on a foundation of trust and reliability.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Milestone 5: Future Vision */}
+            <div className="flex items-center w-full">
+              <div className="w-1/2 pr-8 flex justify-end">
+                <div className="text-right" data-aos="fade-right">
+                  <h3 className="text-xl font-bold text-white">Future – National Reach</h3>
+                  <p className="text-gray-300">
+                    Looking ahead, we aim to become Nigeria’s most trusted and customer-focused automobile workshop, expanding our services nationwide while maintaining the same commitment to excellence that defined our beginnings.
+                  </p>
+                </div>
+              </div>
+              <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
+              <div className="w-1/2 pl-8"></div>
+            </div>
           </div>
         </div>
+
+        {/* Our Values Section */}
+        <div className="mt-20 py-10">
+          <h2 className="text-4xl font-bold text-center mb-4 text-white">Our Values</h2>
+          <p className="text-lg text-center mb-12 text-gray-300">
+            The principles that guide everything we do and shape every decision we make.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Value Card 1: Quality Craftsmanship */}
+            <div className="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col items-start" data-aos="fade-up">
+              <div className="bg-purple-600 rounded-full p-4 mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Quality Craftsmanship</h3>
+              <p className="text-gray-300">
+                Every repair and service we provide is carried out with meticulous attention to detail and a commitment to excellence, ensuring your vehicle performs at its best.
+              </p>
+            </div>
+
+            {/* Value Card 2: Ethical Sourcing */}
+            <div className="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col items-start" data-aos="fade-up" data-aos-delay="100">
+              <div className="bg-pink-500 rounded-full p-4 mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2-3-.895-3-2 1.343-2 3-2zM21 12c0 1.233-.526 2.378-1.378 3.23S17.233 17 16 17c-1.233 0-2.378-.526-3.23-1.378S11 13.233 11 12c0-1.233.526-2.378 1.378-3.23S14.767 7 16 7c1.233 0 2.378.526 3.23 1.378S21 10.767 21 12zM5 12c0 1.233-.526 2.378-1.378 3.23S2.767 17 4 17c1.233 0 2.378-.526 3.23-1.378S9 13.233 9 12c0-1.233-.526-2.378-1.378-3.23S5.767 7 4 7c-1.233 0-2.378.526-3.23 1.378S0 10.767 0 12z"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Ethical Practices</h3>
+              <p className="text-gray-300">
+                We operate with transparency, honesty, and integrity in all our dealings — from pricing to repair recommendations — ensuring fair treatment for every customer.
+              </p>
+            </div>
+
+            {/* Value Card 3: Customer-Centric Care */}
+            <div className="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col items-start" data-aos="fade-up" data-aos-delay="200">
+              <div className="bg-blue-600 rounded-full p-4 mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H2v-2a4 4 0 014-4h12.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.586"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Customer-Centric Care</h3>
+              <p className="text-gray-300">
+                Your satisfaction is our top priority. We listen to your needs, provide personalized solutions, and deliver a smooth, hassle-free service experience.
+              </p>
+            </div>
+
+            {/* Value Card 4: Continuous Innovation */}
+            <div className="bg-gray-800 p-8 rounded-lg shadow-lg flex flex-col items-start" data-aos="fade-up" data-aos-delay="300">
+              <div className="bg-green-500 rounded-full p-4 mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-2">Continuous Innovation</h3>
+              <p className="text-gray-300">
+                We stay updated with the latest automotive technologies and repair techniques, offering cutting-edge solutions and superior service quality.
+              </p>
+            </div>
+          </div>
+        </div>
+
 
         {/* Inserted Client Section */}
         <SectionWrapper className="py-10">
@@ -112,8 +278,31 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
-    </SectionWrapper>
-  );
-};
+      </SectionWrapper>
+    );
+  };
+
+  const ReadMoreLess = ({ text, maxLength }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const toggleReadMoreLess = () => setIsExpanded(!isExpanded);
+
+    if (text.length <= maxLength) {
+      return <p className="text-lg text-white mb-4 whitespace-pre-wrap">{text}</p>;
+    }
+
+    const displayedText = isExpanded ? text : `${text.substring(0, maxLength)}...`;
+
+    return (
+      <div>
+        <p className="text-lg text-white mb-4 whitespace-pre-wrap">{displayedText}</p>
+        <button
+          onClick={toggleReadMoreLess}
+          className="text-yellow-500 hover:text-yellow-600 font-bold focus:outline-none"
+        >
+          {isExpanded ? 'Read Less' : 'Read More'}
+        </button>
+      </div>
+    );
+  };
 
 export default AboutPage;

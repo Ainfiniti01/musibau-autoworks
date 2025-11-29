@@ -37,9 +37,6 @@ const HomePage = () => {
       <SectionWrapper className=""> {/* Added py-16 for spacing */}
         <PremiumServicesCards />
       </SectionWrapper>
-      <SectionWrapper className="py-12">
-        <ServicesOverview />
-      </SectionWrapper>
       <SectionWrapper className="py-"> {/* Added py-16 for spacing */}
         <WhyChooseUs />
       </SectionWrapper>
@@ -65,14 +62,6 @@ const HomePage = () => {
     </div>
   </section>
 </SectionWrapper>
-      <SectionWrapper className="py-12">
-        <ServicesOverview />
-      </SectionWrapper>
-      {/* <div className="text-center py-4">
-        <Link to="/about" >
-          Learn More About Us
-        </Link>
-      </div> */}
       <SectionWrapper className="py-10"> {/* Added py-16 for spacing */}
         <TestimonialsOrMap />
       </SectionWrapper>

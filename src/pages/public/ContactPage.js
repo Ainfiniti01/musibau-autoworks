@@ -27,7 +27,7 @@ const ContactPage = () => {
     </div>
     <div>
       <h4 className="text-white font-semibold">WhatsApp</h4>
-      <p className="text-gray-300">+234 903 808 9899</p>
+      <p className="text-gray-300">+234 913 686 5592</p>
       <span className="text-sm text-gray-400">Get instant responses to your questions</span>
     </div>
   </div>
@@ -50,9 +50,13 @@ const ContactPage = () => {
       <i className="fas fa-map-marker-alt"></i>
     </div>
     <div>
-      <h4 className="text-white font-semibold">Location</h4>
-      <p className="text-gray-300">Lagos, Nigeria</p>
-      <span className="text-sm text-gray-400">Anywhere in Lagos for now</span>
+      <h4 className="text-white font-semibold mb-1">Location</h4>
+      <p className="text-gray-300 leading-relaxed">
+        32/34 Alhaji Imam Raimi Street, Makoko, Sabo-Yaba, Lagos, Nigeria
+      </p>
+      <span className="text-sm text-gray-400 block mt-1">
+        We provide services nationwide through scheduled bookings.
+      </span>
     </div>
   </div>
 
@@ -63,7 +67,7 @@ const ContactPage = () => {
     </div>
     <div>
       <h4 className="text-white font-semibold">Phone</h4>
-      <p className="text-gray-300">09095707751 / 09032035143</p>
+      <p className="text-gray-300">0913 686 5592 / 0803 300 1735</p>
       <span className="text-sm text-gray-400">Business hours: 9AM - 6PM WAT</span>
     </div>
   </div>

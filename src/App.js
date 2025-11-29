@@ -16,7 +16,7 @@ import { Analytics } from "@vercel/analytics/react";
 // Page Components using React.lazy
 const HomePage = lazy(() => import('./pages/public/HomePage'));
 const ServicesPage = lazy(() => import('./pages/public/ServicesPage'));
-// const BookingPage = lazy(() => import('./pages/public/BookingPage'));
+const BookingPage = lazy(() => import('./pages/public/BookingPage'));
 const ProductsPage = lazy(() => import('./pages/public/ProductsPage'));
 const ContactPage = lazy(() => import('./pages/public/ContactPage'));
 const GalleryPage = lazy(() => import('./pages/public/GalleryPage'));
@@ -41,7 +41,7 @@ function App() {
           {/* Public Routes */}
           <Route path="/" element={<ErrorBoundary><PublicLayout><HomePage /></PublicLayout></ErrorBoundary>} />
           <Route path="/services" element={<ErrorBoundary><PublicLayout><ServicesPage /></PublicLayout></ErrorBoundary>} />
-          {/* <Route path="/booking" element={<ErrorBoundary><PublicLayout><BookingPage /></PublicLayout></ErrorBoundary>} /> */}
+          <Route path="/booking" element={<ErrorBoundary><PublicLayout><BookingPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/products" element={<ErrorBoundary><PublicLayout><ProductsPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/contact" element={<ErrorBoundary><PublicLayout><ContactPage /></PublicLayout></ErrorBoundary>} />
           <Route path="/gallery" element={<ErrorBoundary><PublicLayout><GalleryPage /></PublicLayout></ErrorBoundary>} />
