@@ -9,7 +9,7 @@ import PremiumServicesCards from '../../components/PremiumServicesCards';
 import WhyChooseUs from '../../components/WhyChooseUs';
 import AboutSection from '../../components/AboutSection';
 import ExperienceSection from '../../components/ExperienceSection';
-import TestimonialsOrMap from '../../components/Map';
+import Map from '../../components/Map';
 import ReviewsSection from '../../components/ReviewsSection'; // Import the new ReviewsSection
 import { Link } from 'react-router-dom';
 
@@ -64,7 +64,7 @@ const HomePage = () => {
   </section>
 </SectionWrapper>
       <SectionWrapper className="py-10"> {/* Added py-16 for spacing */}
-        <TestimonialsOrMap />
+        <Map/>
       </SectionWrapper>
       <SectionWrapper className="py-10"> {/* Added py-16 for spacing */}
         <ReviewsSection /> {/* Render the new ReviewsSection */}
