@@ -40,15 +40,13 @@ const AboutPage = () => {
           <div data-aos="fade-right">
             <h2 className="text-3xl font-semibold mb-4 text-white">Our Story</h2>
             <ReadMoreLess
-              text={`At Musibau Autoworks, we believe that your vehicle deserves more than just repairs — it deserves care, expertise, and honesty. What began as a small workshop in Makoko, Sabo-Yaba, grew from a simple dream into a trusted name in automotive service across Lagos.
+              text={`Musibau Autoworks began with a simple mission - to bring honesty, expertise, and reliability back into automobile repair services. What started as a small workshop in Makoko, Sabo-Yaba, has grown into a trusted auto service brand known for quality workmanship and professional service.
 
-              Founded by Engineer Abdulazeez Musibau, our journey started with a passion for cars and a commitment to doing things differently: no hidden charges, no shortcuts — just reliable, high-quality service every time. We understand that your car is more than just a vehicle; it’s a part of your life. That’s why we treat every service with precision, dedication, and respect.
+              Founded by Engineer Abdulazeez Musibau, a passionate automotive engineer, Musibau Autoworks was built on the belief that every car owner deserves transparent repairs, fair pricing, and top-tier mechanical care. Over the years, our dedication to excellence has allowed us to expand from routine car fixes to full-scale services, including chassis repair, engine overhaul, electrical diagnostics, preventive maintenance, and home service support.
 
-              Over the years, Musibau Autoworks has grown to offer a full range of services — from routine maintenance and diagnostics to engine overhauls, chassis repairs, electrical work, and even home service support. Our team combines modern tools with hands-on expertise to ensure your car is safe, efficient, and running at its best.
+              Our journey has been shaped by continuous learning, modern equipment upgrades, and the belief that customer satisfaction is the most important part of our work. Today, Musibau Autoworks stands as a reliable partner for drivers across Lagos - delivering fast, dependable, and professional automotive solutions.
 
-              But what truly drives us is our customers. Your trust fuels our growth, your satisfaction is our priority, and your peace of mind is our mission. Whether it’s a simple oil change or a complex repair, Musibau Autoworks is here to make sure you get back on the road safely, quickly, and confidently.
-
-              We are proud of how far we’ve come, but our vision is even bigger: to become Nigeria’s most trusted and customer-focused automobile workshop. From your daily drive to your prized vehicle, we’ve got you covered.`}
+              As we grow, our vision remains the same: to become Nigeria’s most trusted automobile workshop by combining technical expertise with genuine care for our customers and their vehicles. From routine maintenance to complex repairs, we’ve got you covered.`}
               maxLength={300}
             />
           </div>
