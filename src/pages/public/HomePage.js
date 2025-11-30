@@ -25,7 +25,7 @@ const HomePage = () => {
     <main>
       <Helmet>
         <title>Musibau AutoWorks - Home</title>
-        <link rel="icon" href="src/assets/images/logo.png" />
+        <link rel="icon" href="/logo.png" />
         <meta name="description" content="Welcome to Musibau AutoWorks, your premier destination for reliable automotive services." />
       </Helmet>
 
