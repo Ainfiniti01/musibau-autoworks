@@ -17,6 +17,7 @@ const Map = () => {
           <h3 className="text-3xl font-bold text-white mb-8 text-center md:text-left">Our Location</h3>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d65362411.61190957!2d88.7610255!3d0.8247176!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c8da642e481%3A0x42d33769d3ebadba!2sMakoko%2C%20Lagos%20101245%2C%20Lagos!5e0!3m2!1sen!2sng!4v1764278513935!5m2!1sen!2sng"
+            // src="https://www.google.com/maps/embed?pb=!4v1764577109968!6m8!1m7!1s7Y6_WsTzRPYelPQGKGdw4g!2m2!1d6.498701087487818!2d3.384806329167029!3f206.70110085917332!4f-5.5072470307829775!5f0.7820865974627469"
             width="100%"
             height="450"
             style={{ border: 0 }}

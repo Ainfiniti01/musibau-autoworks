@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import SectionWrapper from '../../components/SectionWrapper'; // Assuming SectionWrapper is a common layout component
+import ReviewsSection from '../../components/ReviewsSection';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa'; // Example icons for testimonials
 const aboutImage = require('../../assets/images/logo.png');
 
@@ -223,58 +224,7 @@ const AboutPage = () => {
           </section>
         </SectionWrapper>
 
-        <div className="mt-16 text-center py-10" data-aos="fade-up">
-          <h2 className="text-3xl font-semibold mb-6">What Our Clients Say</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Example Testimonial 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <img src="/assets/images/customer1.jpg" alt="Customer 1" className="w-16 h-16 rounded-full mr-4 object-cover"/>
-                <div>
-                  <h3 className="text-xl font-bold">John Doe</h3>
-                  <p className="text-gray-600">Satisfied Customer</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">
-                <FaQuoteLeft className="inline-block mr-1 text-blue-500" />
-                "The service at Musibau AutoWorks was exceptional! They were quick, efficient, and very professional. Highly recommended!"
-                <FaQuoteRight className="inline-block ml-1 text-blue-500" />
-              </p>
-            </div>
-
-            {/* Example Testimonial 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4">
-                <img src="/assets/images/customer2.jpg" alt="Customer 2" className="w-16 h-16 rounded-full mr-4 object-cover"/>
-                <div>
-                  <h3 className="text-xl font-bold">Jane Smith</h3>
-                  <p className="text-gray-600">Repeat Client</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">
-                <FaQuoteLeft className="inline-block mr-1 text-blue-500" />
-                "I've been bringing my car here for years and always receive top-notch service. They are trustworthy and fair."
-                <FaQuoteRight className="inline-block ml-1 text-blue-500" />
-              </p>
-            </div>
-
-            {/* Example Testimonial 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="flex items-center mb-4 py">
-                <img src="/assets/images/customer3.jpg" alt="Customer 3" className="w-16 h-16 rounded-full mr-4 object-cover"/>
-                <div>
-                  <h3 className="text-xl font-bold">Peter Jones</h3>
-                  <p className="text-gray-600">New Customer</p>
-                </div>
-              </div>
-              <p className="text-gray-700 italic">
-                <FaQuoteLeft className="inline-block mr-1 text-blue-500" />
-                "Great experience! The team explained everything clearly and the work was done perfectly. Will definitely return."
-                <FaQuoteRight className="inline-block ml-1 text-blue-500" />
-              </p>
-            </div>
-          </div>
-        </div>
+        <ReviewsSection />
       </div>
       </SectionWrapper>
     );
