@@ -57,7 +57,7 @@ const AboutPage = () => {
         <div className="mt-20 py-10">
           <h2 className="text-4xl font-bold text-center mb-4 text-white">Our Journey</h2>
           <p className="text-lg text-center mb-12 text-gray-300">
-            Key milestones that have shaped Musibau Autoworks and our vision over the years.
+            Key milestones that have shaped Musibau Autoworks and our long-standing vision.
           </p>
 
           <div className="relative max-w-4xl mx-auto">
@@ -65,13 +65,13 @@ const AboutPage = () => {
             <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-yellow-500 h-full"></div>
 
             {/* Timeline Items */}
-            {/* Milestone 1: The Beginning */}
+            {/* Milestone 1: The Foundation */}
             <div className="flex items-center w-full mb-8">
               <div className="w-1/2 pr-8 flex justify-end">
                 <div className="text-right" data-aos="fade-right">
-                  <h3 className="text-xl font-bold text-white">2010 – The Beginning</h3>
+                  <h3 className="text-xl font-bold text-white">2005 - The Foundation</h3>
                   <p className="text-gray-300">
-                    Musibau Autoworks opened its doors as a small workshop with a simple mission: to provide honest, reliable, and high-quality automotive services.
+                    Musibau Autoworks began its journey in 2005, registered with a mission to deliver honest, dependable, and high-quality automotive repair services. What started as a humble operation laid the groundwork for the trusted brand we are today.
                   </p>
                 </div>
               </div>
@@ -79,27 +79,27 @@ const AboutPage = () => {
               <div className="w-1/2 pl-8"></div>
             </div>
 
-            {/* Milestone 2: Growth and Expansion */}
+            {/* Milestone 2: The Beginning of Operations Growth */}
             <div className="flex items-center w-full mb-8">
               <div className="w-1/2 pr-8"></div>
               <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
               <div className="w-1/2 pl-8 flex justify-start">
                 <div className="text-left" data-aos="fade-left">
+                  <h3 className="text-xl font-bold text-white">2010 - The Beginning of Operations Growth</h3>
+                  <p className="text-gray-300">
+                    By 2010, our workshop had grown significantly, serving more customers and gaining a reputation for reliability, transparency, and skilful workmanship.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Milestone 3: Expansion of Services */}
+            <div className="flex items-center w-full mb-8">
+              <div className="w-1/2 pr-8 flex justify-end">
+                <div className="text-right" data-aos="fade-right">
                   <h3 className="text-xl font-bold text-white">2015 – Expansion of Services</h3>
                   <p className="text-gray-300">
-                    We broadened our offerings to include comprehensive services such as engine overhauls, electrical repairs, and specialized diagnostics, meeting more of our customers’ automotive needs.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Milestone 3: Technology Integration */}
-            <div className="flex items-center w-full mb-8">
-              <div className="w-1/2 pr-8 flex justify-end">
-                <div className="text-right" data-aos="fade-right">
-                  <h3 className="text-xl font-bold text-white">2020 – Modernization</h3>
-                  <p className="text-gray-300">
-                    We integrated state-of-the-art diagnostic tools and modern repair techniques, improving efficiency, precision, and overall service quality.
+                    We expanded our service offerings to include full mechanical repairs, engine overhauls, advanced electrical diagnostics, chassis repairs, and preventive maintenance—broadening our ability to meet customers’ diverse automotive needs.
                   </p>
                 </div>
               </div>
@@ -107,32 +107,46 @@ const AboutPage = () => {
               <div className="w-1/2 pl-8"></div>
             </div>
 
-            {/* Milestone 4: Community Trust */}
+            {/* Milestone 4: Modernization */}
             <div className="flex items-center w-full mb-8">
               <div className="w-1/2 pr-8"></div>
               <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
               <div className="w-1/2 pl-8 flex justify-start">
                 <div className="text-left" data-aos="fade-left">
-                  <h3 className="text-xl font-bold text-white">2023 – Building Trust</h3>
+                  <h3 className="text-xl font-bold text-white">2020 – Modernization</h3>
                   <p className="text-gray-300">
-                    Our dedication to professionalism and customer satisfaction earned us recognition as a leading automotive service provider in Lagos, built on a foundation of trust and reliability.
+                    We adopted modern diagnostic equipment and up-to-date repair techniques, improving service speed, accuracy, and overall customer experience.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Milestone 5: Future Vision */}
-            <div className="flex items-center w-full">
+            {/* Milestone 5: Strengthening Customer Trust */}
+            <div className="flex items-center w-full mb-8">
               <div className="w-1/2 pr-8 flex justify-end">
                 <div className="text-right" data-aos="fade-right">
-                  <h3 className="text-xl font-bold text-white">Future – National Reach</h3>
+                  <h3 className="text-xl font-bold text-white">2023 – Strengthening Customer Trust</h3>
                   <p className="text-gray-300">
-                    Looking ahead, we aim to become Nigeria’s most trusted and customer-focused automobile workshop, expanding our services nationwide while maintaining the same commitment to excellence that defined our beginnings.
+                    Through consistent quality and professional service delivery, Musibau Autoworks became recognised as a trusted automotive workshop in Lagos, with a growing customer base and strong community reputation.
                   </p>
                 </div>
               </div>
               <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
               <div className="w-1/2 pl-8"></div>
+            </div>
+
+            {/* Milestone 6: Future Vision */}
+            <div className="flex items-center w-full">
+              <div className="w-1/2 pr-8"></div>
+              <div className="w-8 h-8 bg-yellow-500 rounded-full absolute left-1/2 transform -translate-x-1/2 border-4 border-gray-900"></div>
+              <div className="w-1/2 pl-8 flex justify-start">
+                <div className="text-left" data-aos="fade-left">
+                  <h3 className="text-xl font-bold text-white">Future - National Reach</h3>
+                  <p className="text-gray-300">
+                    Our vision is to expand services beyond Lagos and become Nigeria’s most trusted automobile workshop, delivering excellence, transparency, and customer-first service nationwide.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
